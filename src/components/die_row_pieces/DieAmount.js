@@ -1,20 +1,27 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
+import { updateDieAmount } from '../../actions'
+import { connect } from 'react-redux'
 
 class DieAmount extends Component {
+   handleDieAmount = (e) => {
+      this.props.updateDieAmount(e.target.value, this.props.id)
+   }
+
    render() {
+      const { dieAmount } = this.props
+
       return (
          <TextField
-            // label='# of dice'
-            id='diceToRoll'
-            defaultValue='1'
-            className=''
+            value={dieAmount}
+            type='number'
             margin='dense'
             variant='outlined'
-            style={{ width: '100px' }}
+            onChange={this.handleDieAmount}
+            style={{ width: '70px' }}
          />
       )
    }
 }
 
-export default DieAmount
+export default connect(null, { updateDieAmount })(DieAmount)

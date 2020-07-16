@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CssBaseLine from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 
-import DieRow from './DieRow'
+import DiceContainer from './DiceContainer'
 
 class App extends Component {
    render() {
@@ -11,7 +11,7 @@ class App extends Component {
             <CssBaseLine />
             <Container maxWidth='lg'>
                <h1>DnD Dice Roller</h1>
-               <DieRow />
+               <DiceContainer />
             </Container>
          </>
       )

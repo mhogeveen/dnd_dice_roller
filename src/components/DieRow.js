@@ -12,8 +12,10 @@ import AddRow from './die_row_pieces/AddRow'
 
 class DieRow extends Component {
    render() {
+      const { dieAmount, dieType, modType, modAmount, id } = this.props.die
+
       return (
-         <Paper>
+         <Paper style={{ marginBottom: '20px' }}>
             <form autoComplete='off'>
                <Grid
                   container
@@ -26,13 +28,13 @@ class DieRow extends Component {
                      <DieIcon />
                   </Grid>
                   <Grid item style={{ display: 'flex', alignItems: 'center' }}>
-                     <DieAmount />
+                     <DieAmount dieAmount={dieAmount} id={id} />
                      <p style={{ margin: '0 10px', fontSize: '1.25rem' }}>d</p>
-                     <DieType />
+                     <DieType dieType={dieType} id={id} />
                   </Grid>
                   <Grid item style={{ display: 'flex', alignItems: 'center' }}>
-                     <ModType />
-                     <ModAmount />
+                     <ModType modType={modType} id={id} />
+                     <ModAmount modAmount={modAmount} id={id} />
                   </Grid>
                   <Grid item>
                      <Roll />

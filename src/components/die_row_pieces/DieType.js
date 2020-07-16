@@ -1,25 +1,28 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
+import { connect } from 'react-redux'
+import { updateDieType } from '../../actions'
 
 const diceTypes = [4, 6, 8, 10, 12, 20, 100]
 
-const handleTypeChange = (e) => {
-   console.log(e)
-}
-
 class DieType extends Component {
+   handleDieType = (e) => {
+      this.props.updateDieType(e.target.value, this.props.id)
+   }
+
    render() {
+      const { dieType } = this.props
+
       return (
          <TextField
             id='dieType'
             select
-            // label='Select'
-            value='4'
-            onChange={handleTypeChange}
+            value={dieType}
+            onChange={this.handleDieType}
             margin='dense'
             variant='outlined'
-            style={{ width: '100px' }}
+            style={{ width: '80px' }}
          >
             {diceTypes.map((type) => (
                <MenuItem key={type} value={type}>
@@ -31,4 +34,4 @@ class DieType extends Component {
    }
 }
 
-export default DieType
+export default connect(null, { updateDieType })(DieType)

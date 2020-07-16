@@ -6,21 +6,27 @@ import {
    RESET_ROW,
 } from './types'
 
-export const updateDieAmount = () => {
+export const updateDieAmount = (value, id) => {
    return {
       type: UPDATE_DIE_AMOUNT,
+      id,
+      payload: value,
    }
 }
 
-export const updateDieType = () => {
+export const updateDieType = (value, id) => {
    return {
       type: UPDATE_DIE_TYPE,
+      id,
+      payload: value,
    }
 }
 
-export const updateModType = () => {
+export const updateModType = (value, id) => {
    return {
       type: UPDATE_MOD_TYPE,
+      id,
+      payload: value,
    }
 }
 

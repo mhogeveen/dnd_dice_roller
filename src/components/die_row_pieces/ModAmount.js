@@ -3,15 +3,15 @@ import TextField from '@material-ui/core/TextField'
 
 class ModAmount extends Component {
    render() {
+      const { modAmount } = this.props
+
       return (
          <TextField
-            // label='modifier'
-            id='modifier'
-            defaultValue='0'
-            className=''
+            value={modAmount}
+            type='number'
             margin='dense'
             variant='outlined'
-            style={{ width: '100px' }}
+            style={{ width: '70px' }}
          />
       )
    }
