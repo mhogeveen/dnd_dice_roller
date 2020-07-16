@@ -15,7 +15,7 @@ class DieType extends Component {
             id='dieType'
             select
             // label='Select'
-            value='0'
+            value='4'
             onChange={handleTypeChange}
             margin='dense'
             variant='outlined'
