@@ -18,7 +18,7 @@ class DieRow extends Component {
             <form autoComplete='off'>
                <Grid
                   container
-                  spacing={3}
+                  spacing={2}
                   alignItems='center'
                   justify='space-between'
                   style={{ padding: '0 20px', margin: '0' }}
