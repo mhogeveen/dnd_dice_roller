@@ -8,7 +8,6 @@ import ModAmount from './die_row_pieces/ModAmount'
 import Roll from './die_row_pieces/Roll'
 import Reset from './die_row_pieces/Reset'
 import RemoveRow from './die_row_pieces/RemoveRow'
-import AddRow from './die_row_pieces/AddRow'
 
 class DieRow extends Component {
    render() {
@@ -37,12 +36,11 @@ class DieRow extends Component {
                      <ModAmount modAmount={modAmount} id={id} />
                   </Grid>
                   <Grid item>
-                     <Roll />
-                     <Reset />
+                     <Roll id={id} />
+                     <Reset id={id} />
                   </Grid>
                   <Grid item>
-                     <RemoveRow />
-                     <AddRow />
+                     <RemoveRow id={id} />
                   </Grid>
                </Grid>
             </form>

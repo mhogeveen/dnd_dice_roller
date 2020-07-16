@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { resetRow } from '../../actions'
+
 import Button from '@material-ui/core/Button'
 
-const Reset = () => {
-   return (
-      <Button color='secondary' variant='outlined'>
-         Reset
-      </Button>
-   )
+class Reset extends Component {
+   handleReset = (e) => {
+      this.props.resetRow(this.props.id)
+   }
+
+   render() {
+      return (
+         <Button color='secondary' variant='outlined' onClick={this.handleReset}>
+            Reset
+         </Button>
+      )
+   }
 }
 
-export default Reset
+export default connect(null, { resetRow })(Reset)
