@@ -14,17 +14,17 @@ class DieRow extends Component {
       const { dieAmount, dieType, modType, modAmount, id } = this.props.die
 
       return (
-         <Paper style={{ marginBottom: '20px' }}>
+         <Paper style={{ marginBottom: '10px' }}>
             <form autoComplete='off'>
                <Grid
                   container
                   spacing={3}
                   alignItems='center'
                   justify='space-between'
-                  style={{ padding: '0 20px' }}
+                  style={{ padding: '0 20px', margin: '0' }}
                >
-                  <Grid item>
-                     <DieIcon />
+                  <Grid item style={{ padding: '0', height: '30px' }}>
+                     <DieIcon dieType={dieType} />
                   </Grid>
                   <Grid item style={{ display: 'flex', alignItems: 'center' }}>
                      <DieAmount dieAmount={dieAmount} id={id} />

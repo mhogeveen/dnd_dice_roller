@@ -50,13 +50,6 @@ const initialState = [
       modType: '+',
       modAmount: 0,
    },
-   {
-      id: 6,
-      dieAmount: 1,
-      dieType: 100,
-      modType: '+',
-      modAmount: 0,
-   },
 ]
 
 const resetDie = {

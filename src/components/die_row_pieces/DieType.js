@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import { connect } from 'react-redux'
 import { updateDieType } from '../../actions'
 
-const diceTypes = [4, 6, 8, 10, 12, 20, 100]
+const diceTypes = [4, 6, 8, 10, 12, 20]
 
 class DieType extends Component {
    handleDieType = (e) => {
