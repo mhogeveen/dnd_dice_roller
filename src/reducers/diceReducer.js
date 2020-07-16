@@ -5,6 +5,7 @@ import {
    UPDATE_MOD_AMOUNT,
    RESET_ROW,
    REMOVE_ROW,
+   ADD_ROW,
 } from '../actions/types'
 
 const initialState = [
@@ -59,6 +60,12 @@ const resetDie = {
    modAmount: 0,
 }
 
+let id = 5
+const nextId = () => {
+   id++
+   return id
+}
+
 export default (state = initialState, action) => {
    switch (action.type) {
       case UPDATE_DIE_AMOUNT:
@@ -81,6 +88,8 @@ export default (state = initialState, action) => {
          return state.map((die) => (die.id === action.id ? { ...resetDie, id: die.id } : die))
       case REMOVE_ROW:
          return state.filter((die) => die.id !== action.id)
+      case ADD_ROW:
+         return [...state, { ...resetDie, id: nextId() }]
       default:
          return state
    }

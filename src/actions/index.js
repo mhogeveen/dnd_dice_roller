@@ -5,6 +5,7 @@ import {
    UPDATE_MOD_AMOUNT,
    RESET_ROW,
    REMOVE_ROW,
+   ADD_ROW,
 } from './types'
 
 export const updateDieAmount = (value, id) => {
@@ -50,5 +51,11 @@ export const removeRow = (id) => {
    return {
       type: REMOVE_ROW,
       id,
+   }
+}
+
+export const addRow = () => {
+   return {
+      type: ADD_ROW,
    }
 }

@@ -5,7 +5,7 @@ import { resetRow } from '../../actions'
 import Button from '@material-ui/core/Button'
 
 class Reset extends Component {
-   handleReset = (e) => {
+   handleReset = () => {
       this.props.resetRow(this.props.id)
    }
 
