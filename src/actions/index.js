@@ -6,6 +6,7 @@ import {
    REMOVE_ROW,
    ADD_ROW,
    ADD_RESULT,
+   CLEAR_RESULTS,
 } from './types'
 
 export const updateDieAmount = (value, id) => {
@@ -56,5 +57,11 @@ export const addResult = (result) => {
    return {
       type: ADD_RESULT,
       payload: result,
+   }
+}
+
+export const clearResults = () => {
+   return {
+      type: CLEAR_RESULTS,
    }
 }

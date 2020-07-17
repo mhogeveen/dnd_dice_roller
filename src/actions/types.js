@@ -6,3 +6,4 @@ export const REMOVE_ROW = 'REMOVE_ROW'
 export const ADD_ROW = 'ADD_ROW'
 
 export const ADD_RESULT = 'ADD_RESULT'
+export const CLEAR_RESULTS = 'CLEAR_RESULTS'

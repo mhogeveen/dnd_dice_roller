@@ -8,7 +8,10 @@ class Roll extends Component {
    handleRoll = () => {
       const { die } = this.props
 
+      const now = new Date()
+
       let result = {
+         date: now.toLocaleString(),
          rolls: [],
          subtotal: 0,
          total: 0,
