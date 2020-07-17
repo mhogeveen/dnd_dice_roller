@@ -44,4 +44,4 @@ class ModType extends Component {
    }
 }
 
-export default connect(null, { updateModType })(ModType)
+// export default connect(null, { updateModType })(ModType)

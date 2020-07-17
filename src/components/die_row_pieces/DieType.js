@@ -16,9 +16,9 @@ class DieType extends Component {
 
       return (
          <TextField
-            id='dieType'
             select
             value={dieType}
+            label='type'
             onChange={this.handleDieType}
             margin='dense'
             variant='outlined'

@@ -15,6 +15,7 @@ class DieAmount extends Component {
          <TextField
             value={dieAmount}
             type='number'
+            label='dice'
             margin='dense'
             variant='outlined'
             onChange={this.handleDieAmount}

@@ -16,6 +16,7 @@ class ModAmount extends Component {
          <TextField
             value={modAmount}
             type='number'
+            label='mod'
             onChange={this.handleModAmount}
             margin='dense'
             variant='outlined'
