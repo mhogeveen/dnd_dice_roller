@@ -15,4 +15,8 @@ class ResultsContainer extends Component {
    }
 }
 
-export default connect(null)(ResultsContainer)
+const mapStateToProps = (state) => {
+   return { results: state.results }
+}
+
+export default connect(mapStateToProps)(ResultsContainer)

@@ -1,11 +1,9 @@
-import {
+import { ADD_RESULT } from '../actions/types'
 
-} from '../actions/types'
-
-export default (state = {}, action) => {
+export default (state = [], action) => {
    switch (action.type) {
-      case ...action:
-         return
+      case ADD_RESULT:
+         return [...state, action.payload]
       default:
          return state
    }

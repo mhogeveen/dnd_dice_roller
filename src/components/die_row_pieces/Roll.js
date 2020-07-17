@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { addResult } from '../../actions'
 
 import Button from '@material-ui/core/Button'
 
 class Roll extends Component {
-   calculateRoll = () => {
+   handleRoll = () => {
       const { die } = this.props
 
-      let results = {
+      let result = {
          rolls: [],
          subtotal: 0,
          total: 0,
@@ -19,17 +20,17 @@ class Roll extends Component {
       for (let i = 0; i < die.dieAmount; i++) {
          if (die.dieType === 10) {
             const roll = Math.floor(Math.random() * die.dieType)
-            results.rolls = [...results.rolls, roll]
-            results.subtotal += roll
+            result.rolls = [...result.rolls, roll]
+            result.subtotal += roll
          } else {
             const roll = Math.ceil(Math.random() * die.dieType)
-            results.rolls = [...results.rolls, roll]
-            results.subtotal += roll
+            result.rolls = [...result.rolls, roll]
+            result.subtotal += roll
          }
       }
 
-      results.total = results.subtotal + results.modAmount
-      console.log(results)
+      result.total = result.subtotal + result.modAmount
+      this.props.addResult(result)
    }
 
    render() {
@@ -38,7 +39,7 @@ class Roll extends Component {
             color='primary'
             variant='outlined'
             style={{ margin: '0 10px 0 0' }}
-            onClick={this.calculateRoll}
+            onClick={this.handleRoll}
          >
             Roll
          </Button>
@@ -46,4 +47,4 @@ class Roll extends Component {
    }
 }
 
-export default connect(null)(Roll)
+export default connect(null, { addResult })(Roll)
