@@ -14,10 +14,10 @@ class App extends Component {
             <Container maxWidth='lg'>
                <h1>DnD Dice Roller</h1>
                <Grid container spacing={2}>
-                  <Grid item xs={8}>
+                  <Grid item md={8} sm={12}>
                      <DiceContainer />
                   </Grid>
-                  <Grid item xs>
+                  <Grid item md={4} sm={12}>
                      <ResultsContainer />
                   </Grid>
                </Grid>

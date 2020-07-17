@@ -20,7 +20,7 @@ class ModAmount extends Component {
             onChange={this.handleModAmount}
             margin='dense'
             variant='outlined'
-            style={{ width: '70px' }}
+            style={{ width: '70px', margin: '4px 0' }}
          />
       )
    }

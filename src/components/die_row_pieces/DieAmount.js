@@ -19,7 +19,7 @@ class DieAmount extends Component {
             margin='dense'
             variant='outlined'
             onChange={this.handleDieAmount}
-            style={{ width: '70px' }}
+            style={{ width: '70px', margin: '4px 0' }}
          />
       )
    }

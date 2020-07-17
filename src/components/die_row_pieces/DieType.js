@@ -22,7 +22,7 @@ class DieType extends Component {
             onChange={this.handleDieType}
             margin='dense'
             variant='outlined'
-            style={{ width: '80px' }}
+            style={{ width: '80px', margin: '4px 0' }}
          >
             {diceTypes.map((type) => (
                <MenuItem key={type} value={type}>
