@@ -8,15 +8,21 @@ import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 
 class ResultsContainer extends Component {
+   renderList = () => {
+      if (this.props.results.length !== 0) {
+         return this.props.results.map((result) => <Result key={result.date} result={result} />)
+      } else {
+         return <p style={{ margin: '5px 0' }}>Roll the dice to get results</p>
+      }
+   }
+
    render() {
       return (
          <>
             <Paper style={{ padding: '10px' }}>
                <p style={{ fontWeight: '600', margin: '5px 0' }}>Results</p>
                <Divider />
-               {this.props.results.map((result) => (
-                  <Result key={result.date} result={result} />
-               ))}
+               {this.renderList()}
             </Paper>
             <ClearResults />
          </>
