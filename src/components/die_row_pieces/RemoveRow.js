@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { removeRow } from '../../actions'
 
 import IconButton from '@material-ui/core/IconButton'
-import DeleteIcon from '@material-ui/icons/Delete'
+import DeleteIcon from '@material-ui/icons/DeleteOutlined'
 
 class RemoveRow extends Component {
    handleRemoveRow = (e) => {

@@ -12,7 +12,7 @@ const ClearResults = (props) => {
 
    return (
       <Button
-         variant='contained'
+         variant='outlined'
          disableElevation
          color='secondary'
          startIcon={<RotateRightIcon />}

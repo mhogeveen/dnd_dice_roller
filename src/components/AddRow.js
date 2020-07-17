@@ -13,7 +13,7 @@ class AddRow extends Component {
    render() {
       return (
          <Button
-            variant='contained'
+            variant='outlined'
             color='primary'
             disableElevation
             startIcon={<AddIcon />}

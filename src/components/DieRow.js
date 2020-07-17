@@ -13,7 +13,7 @@ class DieRow extends Component {
       const { dieAmount, dieType, modAmount, id } = this.props.die
 
       return (
-         <Paper style={{ marginBottom: '10px' }}>
+         <Paper elevation='1' style={{ marginBottom: '10px' }}>
             <Grid
                container
                spacing={2}

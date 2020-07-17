@@ -19,7 +19,7 @@ class ResultsContainer extends Component {
    render() {
       return (
          <>
-            <Paper style={{ padding: '10px' }}>
+            <Paper elevation='1' style={{ padding: '10px' }}>
                <p style={{ fontWeight: '600', margin: '5px 0' }}>Results</p>
                <Divider />
                {this.renderList()}
