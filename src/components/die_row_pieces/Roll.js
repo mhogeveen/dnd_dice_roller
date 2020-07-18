@@ -11,6 +11,7 @@ class Roll extends Component {
       const now = new Date()
 
       let result = {
+         id: Date.now(),
          date: now.toLocaleString(),
          rolls: [],
          subtotal: 0,

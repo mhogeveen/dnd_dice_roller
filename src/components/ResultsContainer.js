@@ -10,7 +10,7 @@ import Divider from '@material-ui/core/Divider'
 class ResultsContainer extends Component {
    renderList = () => {
       if (this.props.results.length !== 0) {
-         return this.props.results.map((result) => <Result key={result.date} result={result} />)
+         return this.props.results.map((result) => <Result key={result.id} result={result} />)
       } else {
          return <p style={{ margin: '5px 0' }}>Roll the dice to get results</p>
       }
