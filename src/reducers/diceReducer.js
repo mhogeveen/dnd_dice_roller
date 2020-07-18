@@ -62,7 +62,7 @@ export default (state = initialState, action) => {
    switch (action.type) {
       case UPDATE_DIE_AMOUNT:
          return state.map((die) =>
-            die.id === action.id ? { ...die, dieAmount: Number(action.payload) } : die
+            die.id === action.id ? { ...die, dieAmount: action.payload } : die
          )
       case UPDATE_DIE_TYPE:
          return state.map((die) =>

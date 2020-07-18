@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import Paper from '@material-ui/core/Paper'
-import Divider from '@material-ui/core/Divider'
 
 import DieIcon from './die_row_pieces/DieIcon'
 import DieAmount from './die_row_pieces/DieAmount'

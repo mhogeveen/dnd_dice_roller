@@ -13,8 +13,8 @@ if (storedResults) {
 export default (state = initialState, action) => {
    switch (action.type) {
       case ADD_RESULT:
-         localStorage.setItem('results', JSON.stringify([...state, action.payload]))
-         return [...state, action.payload]
+         localStorage.setItem('results', JSON.stringify([action.payload, ...state]))
+         return [action.payload, ...state]
       case CLEAR_RESULTS:
          localStorage.setItem('results', JSON.stringify([]))
          return []

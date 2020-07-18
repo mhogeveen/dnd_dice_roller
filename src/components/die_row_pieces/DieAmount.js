@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import TextField from '@material-ui/core/TextField'
-import { updateDieAmount } from '../../actions'
 import { connect } from 'react-redux'
+import { updateDieAmount } from '../../actions'
+
+import TextField from '@material-ui/core/TextField'
 
 class DieAmount extends Component {
    handleDieAmount = (e) => {
