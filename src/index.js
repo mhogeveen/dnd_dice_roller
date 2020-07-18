@@ -6,6 +6,8 @@ import reducers from './reducers'
 
 import App from './components/App'
 
+import './style.scss'
+
 const store = createStore(reducers)
 
 ReactDOM.render(
