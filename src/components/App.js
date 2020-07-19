@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import CssBaseLine from '@material-ui/core/CssBaseline'
-import Container from '@material-ui/core/Container'
 
 import NavBar from './NavBar'
 import DiceRoller from './DiceRoller'
@@ -14,9 +13,7 @@ class App extends Component {
                <CssBaseLine />
                <NavBar />
                <Switch>
-                  <Container maxWidth='lg'>
-                     <Route path='/' exact component={DiceRoller} />
-                  </Container>
+                  <Route path='/' exact component={DiceRoller} />
                </Switch>
             </BrowserRouter>
          </>
