@@ -41,7 +41,12 @@ class NavBar extends Component {
                   </Toolbar>
                </Container>
             </AppBar>
-            <Drawer variant='temporary' anchor='right' open={this.props.drawer}>
+            <Drawer
+               variant='temporary'
+               anchor='right'
+               open={this.props.drawer}
+               ModalProps={{ onBackdropClick: this.toggleDrawer }}
+            >
                <div className='nav-drawer'>
                   <IconButton
                      onClick={() => this.toggleDrawer('close')}
@@ -52,7 +57,7 @@ class NavBar extends Component {
                   </IconButton>
                   <Divider />
                   <List component='nav' aria-label='secondary mailbox folders'>
-                     <Link to='/'>
+                     <Link to='/' className='nav-link'>
                         <ListItem button>
                            <ListItemText primary='Dice Roller' />
                         </ListItem>
