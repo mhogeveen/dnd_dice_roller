@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { openDrawer, closeDrawer } from '../actions'
+import { Link } from 'react-router-dom'
 
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -51,11 +52,13 @@ class NavBar extends Component {
                   </IconButton>
                   <Divider />
                   <List component='nav' aria-label='secondary mailbox folders'>
+                     <Link to='/'>
+                        <ListItem button>
+                           <ListItemText primary='Dice Roller' />
+                        </ListItem>
+                     </Link>
                      <ListItem button>
-                        <ListItemText primary='Trash' />
-                     </ListItem>
-                     <ListItem button>
-                        <ListItemText primary='Spam' />
+                        <ListItemText primary='Ability Score Roller' />
                      </ListItem>
                   </List>
                </div>
