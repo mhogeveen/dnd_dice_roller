@@ -9,8 +9,8 @@ class DiceContainer extends Component {
    render() {
       return (
          <>
-            {this.props.dice.map((die) => (
-               <DieRow die={die} key={die.id} />
+            {Object.entries(this.props.dice).map(([id, die]) => (
+               <DieRow die={die} key={id} id={id} />
             ))}
             <AddRow />
             <div className='clear-results-m'>

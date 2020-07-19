@@ -12,7 +12,8 @@ import RemoveRow from './die_row_pieces/RemoveRow'
 
 class DieRow extends Component {
    render() {
-      const { dieAmount, dieType, modAmount, id } = this.props.die
+      const { dieAmount, dieType, modAmount } = this.props.die
+      const id = this.props.id
 
       return (
          <Paper elevation={1} style={{ marginBottom: '10px' }}>

@@ -7,44 +7,38 @@ import {
    ADD_ROW,
 } from '../actions/types'
 
-const initialState = [
-   {
-      id: 0,
+const initialState = {
+   0: {
       dieAmount: 1,
       dieType: 4,
       modAmount: 0,
    },
-   {
-      id: 1,
+   1: {
       dieAmount: 1,
       dieType: 6,
       modAmount: 0,
    },
-   {
-      id: 2,
+   2: {
       dieAmount: 1,
       dieType: 8,
       modAmount: 0,
    },
-   {
-      id: 3,
+   3: {
       dieAmount: 1,
       dieType: 10,
       modAmount: 0,
    },
-   {
-      id: 4,
+   4: {
       dieAmount: 1,
       dieType: 12,
       modAmount: 0,
    },
-   {
-      id: 5,
+   5: {
       dieAmount: 1,
       dieType: 20,
       modAmount: 0,
    },
-]
+}
 
 const resetDie = {
    dieAmount: 1,
@@ -61,23 +55,18 @@ const nextId = () => {
 export default (state = initialState, action) => {
    switch (action.type) {
       case UPDATE_DIE_AMOUNT:
-         return state.map((die) =>
-            die.id === action.id ? { ...die, dieAmount: action.payload } : die
-         )
+         return { ...state, [action.id]: { ...state[action.id], dieAmount: action.payload } }
       case UPDATE_DIE_TYPE:
-         return state.map((die) =>
-            die.id === action.id ? { ...die, dieType: action.payload } : die
-         )
+         return { ...state, [action.id]: { ...state[action.id], dieType: action.payload } }
       case UPDATE_MOD_AMOUNT:
-         return state.map((die) =>
-            die.id === action.id ? { ...die, modAmount: action.payload } : die
-         )
+         return { ...state, [action.id]: { ...state[action.id], modAmount: action.payload } }
       case RESET_ROW:
-         return state.map((die) => (die.id === action.id ? { ...resetDie, id: die.id } : die))
+         return { ...state, [action.id]: { ...resetDie } }
       case REMOVE_ROW:
-         return state.filter((die) => die.id !== action.id)
+         const { [action.id]: _, ...newState } = state
+         return newState
       case ADD_ROW:
-         return [...state, { ...resetDie, id: nextId() }]
+         return { ...state, [nextId()]: { ...resetDie } }
       default:
          return state
    }
