@@ -7,3 +7,6 @@ export const ADD_ROW = 'ADD_ROW'
 
 export const ADD_RESULT = 'ADD_RESULT'
 export const CLEAR_RESULTS = 'CLEAR_RESULTS'
+
+export const OPEN_DRAWER = 'OPEN_DRAWER'
+export const CLOSE_DRAWER = 'CLOSE_DRAWER'

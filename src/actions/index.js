@@ -7,6 +7,8 @@ import {
    ADD_ROW,
    ADD_RESULT,
    CLEAR_RESULTS,
+   OPEN_DRAWER,
+   CLOSE_DRAWER,
 } from './types'
 
 export const updateDieAmount = (value, id) => {
@@ -63,5 +65,17 @@ export const addResult = (result) => {
 export const clearResults = () => {
    return {
       type: CLEAR_RESULTS,
+   }
+}
+
+export const openDrawer = () => {
+   return {
+      type: OPEN_DRAWER,
+   }
+}
+
+export const closeDrawer = () => {
+   return {
+      type: CLOSE_DRAWER,
    }
 }
