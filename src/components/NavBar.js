@@ -10,10 +10,24 @@ import Container from '@material-ui/core/Container'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import Drawer from '@material-ui/core/Drawer'
+import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
+import ListSubheader from '@material-ui/core/ListSubheader'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
-import Divider from '@material-ui/core/Divider'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ArrowRightIcon from '@material-ui/icons/ArrowRight'
+
+const links = [
+   {
+      to: '/',
+      title: 'Dice Roller',
+   },
+   {
+      to: '',
+      title: 'Ability Score Roller',
+   },
+]
 
 class NavBar extends Component {
    toggleDrawer = (toggle) => {
@@ -22,6 +36,19 @@ class NavBar extends Component {
       } else {
          this.props.closeDrawer()
       }
+   }
+
+   renderNavItems = (links) => {
+      return links.map((link) => (
+         <Link to={link.to} className='nav-link'>
+            <ListItem button>
+               <ListItemIcon>
+                  <ArrowRightIcon />
+               </ListItemIcon>
+               <ListItemText primary={link.title} />
+            </ListItem>
+         </Link>
+      ))
    }
 
    render() {
@@ -56,15 +83,13 @@ class NavBar extends Component {
                      <ChevronRightIcon />
                   </IconButton>
                   <Divider />
-                  <List component='nav' aria-label='secondary mailbox folders'>
-                     <Link to='/' className='nav-link'>
-                        <ListItem button>
-                           <ListItemText primary='Dice Roller' />
-                        </ListItem>
-                     </Link>
-                     <ListItem button>
-                        <ListItemText primary='Ability Score Roller' />
-                     </ListItem>
+                  <List
+                     component='nav'
+                     subheader={
+                        <ListSubheader component='div'>What roll will you make?</ListSubheader>
+                     }
+                  >
+                     {this.renderNavItems(links)}
                   </List>
                </div>
             </Drawer>
