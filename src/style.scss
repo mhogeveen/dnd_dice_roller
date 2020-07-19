@@ -35,6 +35,21 @@
    }
 }
 
+.clear-results-d {
+   margin-bottom: 10px;
+
+   @media (max-width: 959px) {
+      display: none;
+   }
+}
+
+.clear-results-m {
+   float: right;
+   @media (min-width: 960px) {
+      display: none;
+   }
+}
+
 @media (max-width: 600px) {
    .dice-row {
       grid-template-columns: 60px calc(100% - 120px) 60px;

@@ -20,6 +20,11 @@ class DieAmount extends Component {
             margin='dense'
             variant='outlined'
             onChange={this.handleDieAmount}
+            InputProps={{
+               inputProps: {
+                  min: 1,
+               },
+            }}
             style={{ width: '70px', margin: '4px 0' }}
          />
       )

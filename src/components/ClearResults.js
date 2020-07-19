@@ -16,7 +16,6 @@ const ClearResults = (props) => {
          disableElevation
          color='secondary'
          startIcon={<RotateRightIcon />}
-         style={{ marginTop: '10px' }}
          onClick={handleClearResults}
       >
          Clear Results

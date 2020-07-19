@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import DieRow from './DieRow'
 import AddRow from './AddRow'
+import ClearResults from './ClearResults'
 
 class DiceContainer extends Component {
    render() {
@@ -12,6 +13,9 @@ class DiceContainer extends Component {
                <DieRow die={die} key={die.id} />
             ))}
             <AddRow />
+            <div className='clear-results-m'>
+               <ClearResults />
+            </div>
          </>
       )
    }
