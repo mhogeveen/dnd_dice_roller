@@ -1,21 +1,27 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import CssBaseLine from '@material-ui/core/CssBaseline'
+
+import Container from '@material-ui/core/Container'
 
 import NavBar from './NavBar'
 import DiceRoller from './DiceRoller'
+import AbilityScoreRoller from './AbilityScoreRoller'
 
 class App extends Component {
    render() {
       return (
          <>
-            <BrowserRouter>
+            <Router basename={'/'}>
                <CssBaseLine />
                <NavBar />
-               <Switch>
-                  <Route path='/' exact component={DiceRoller} />
-               </Switch>
-            </BrowserRouter>
+               <Container maxWidth='lg'>
+                  <Switch>
+                     <Route path='/' exact component={DiceRoller} />
+                     <Route path='/ability-score-roller' component={AbilityScoreRoller} />
+                  </Switch>
+               </Container>
+            </Router>
          </>
       )
    }

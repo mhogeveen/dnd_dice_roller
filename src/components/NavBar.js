@@ -24,7 +24,7 @@ const links = [
       title: 'Dice Roller',
    },
    {
-      to: '',
+      to: '/ability-score-roller',
       title: 'Ability Score Roller',
    },
 ]
