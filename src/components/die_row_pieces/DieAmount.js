@@ -10,13 +10,14 @@ class DieAmount extends Component {
    }
 
    render() {
-      const { dieAmount } = this.props
+      const { dieAmount, label, disabled } = this.props
 
       return (
          <TextField
+            disabled={disabled}
             value={dieAmount}
             type='number'
-            label='dice'
+            label={label}
             margin='dense'
             variant='outlined'
             onChange={this.handleDieAmount}

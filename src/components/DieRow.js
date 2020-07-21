@@ -22,10 +22,10 @@ class DieRow extends Component {
                   <DieIcon dieType={dieType} />
                </div>
                <div className='dice-row-inputs'>
-                  <DieAmount dieAmount={dieAmount} id={id} />
+                  <DieAmount dieAmount={dieAmount} id={id} label='dice' disabled={false} />
                   <p style={{ margin: '0 10px', fontSize: '1.25rem' }}>d</p>
-                  <DieType dieType={dieType} id={id} />
-                  <ModAmount modAmount={modAmount} id={id} />
+                  <DieType dieType={dieType} id={id} label='type' disabled={false} />
+                  <ModAmount modAmount={modAmount} id={id} label='mod' disabled={false} />
                </div>
                <div className='dice-row-buttons'>
                   <Roll die={this.props.die} />

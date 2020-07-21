@@ -9,6 +9,7 @@ import {
    CLEAR_RESULTS,
    OPEN_DRAWER,
    CLOSE_DRAWER,
+   TOGGLE_EDIT,
 } from './types'
 
 export const updateDieAmount = (value, id) => {
@@ -65,6 +66,12 @@ export const addResult = (result) => {
 export const clearResults = () => {
    return {
       type: CLEAR_RESULTS,
+   }
+}
+
+export const toggleEdit = () => {
+   return {
+      type: TOGGLE_EDIT,
    }
 }
 
