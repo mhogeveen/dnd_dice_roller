@@ -4,21 +4,20 @@ import { addResult } from '../actions'
 
 import Paper from '@material-ui/core/Paper'
 
-import DieIcon from './die_row_pieces/DieIcon'
-import DieAmount from './die_row_pieces/DieAmount'
-import DieType from './die_row_pieces/DieType'
-import ModAmount from './die_row_pieces/ModAmount'
-import Reset from './die_row_pieces/Reset'
-import RemoveRow from './die_row_pieces/RemoveRow'
+import DieIcon from './dice/DieIcon'
+import DieAmount from './dice/DieAmount'
+import DieType from './dice/DieType'
+import ModAmount from './dice/ModAmount'
+import Reset from './dice/Reset'
+import RemoveRow from './dice/RemoveRow'
 
 class Dice extends Component {
    handleRoll = () => {
-      const { die } = this.props
+      const { die, id } = this.props
 
       const now = new Date()
 
       let result = {
-         id: Date.now(),
          date: now.toLocaleString(),
          rolls: [],
          subtotal: 0,
@@ -41,7 +40,7 @@ class Dice extends Component {
       }
 
       result.total = result.subtotal + result.modAmount
-      this.props.addResult(result)
+      this.props.addResult(result, id)
    }
 
    renderDice = (dieAmount, dieType, modAmount, id) => {
@@ -101,7 +100,9 @@ class Dice extends Component {
       const { dieAmount, dieType, modAmount } = this.props.die
       const id = this.props.id
 
-      return this.renderDice(dieAmount, dieType, modAmount, id)
+      console.log(this.props.result)
+
+      return <>{this.renderDice(dieAmount, dieType, modAmount, id)}</>
    }
 }
 

@@ -56,10 +56,11 @@ export const addRow = () => {
    }
 }
 
-export const addResult = (result) => {
+export const addResult = (result, id) => {
    return {
       type: ADD_RESULT,
       payload: result,
+      id,
    }
 }
 
