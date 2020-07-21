@@ -41,7 +41,7 @@ class NavBar extends Component {
    renderNavItems = (links) => {
       return links.map((link) => (
          <Link to={link.to} className='nav-link' key={link.title}>
-            <ListItem button>
+            <ListItem button onClick={() => this.toggleDrawer('close')}>
                <ListItemIcon>
                   <ArrowRightIcon />
                </ListItemIcon>
@@ -54,7 +54,7 @@ class NavBar extends Component {
    render() {
       return (
          <>
-            <AppBar position='static' style={{ margin: '0 0 20px 0' }}>
+            <AppBar position='static' style={{ margin: '0 0 10px 0' }}>
                <Container maxWidth='lg' disableGutters={true}>
                   <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
                      <h2>DnD Dice Roller</h2>
