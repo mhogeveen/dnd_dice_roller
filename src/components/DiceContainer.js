@@ -11,7 +11,7 @@ class DiceContainer extends Component {
    render() {
       return (
          <>
-            <div>
+            {/* <div>
                {Object.entries(this.props.dice).map(([id, die]) => (
                   <DieRow die={die} key={id} id={id} />
                ))}
@@ -19,9 +19,22 @@ class DiceContainer extends Component {
                <div className='clear-results-m'>
                   <ClearResults />
                </div>
-            </div>
+            </div> */}
             <div>
-               <EditSwitch />
+               <div className='dice'>
+                  <div className='dice-comp dice-label'>
+                     <span>dice</span>
+                  </div>
+                  <div className='dice-comp type-label'>
+                     <span>type</span>
+                  </div>
+                  <div className='dice-comp mod-label'>
+                     <span>mod</span>
+                  </div>
+                  <div className='dice-comp edit-switch'>
+                     <EditSwitch />
+                  </div>
+               </div>
                {Object.entries(this.props.dice).map(([id, die]) => (
                   <Dice die={die} key={id} id={id} />
                ))}

@@ -10,18 +10,17 @@ class ModAmount extends Component {
    }
 
    render() {
-      const { modAmount, label, disabled } = this.props
+      const { modAmount, label } = this.props
 
       return (
          <TextField
-            disabled={disabled}
             value={modAmount}
             type='number'
             label={label}
             onChange={this.handleModAmount}
             margin='dense'
             variant='outlined'
-            style={{ width: '70px', margin: '4px 0 4px 10px' }}
+            style={{ width: '70px', margin: '4px 0' }}
          />
       )
    }

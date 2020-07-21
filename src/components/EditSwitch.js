@@ -12,7 +12,7 @@ class EditSwitch extends Component {
 
    render() {
       return (
-         <div className='flex-end'>
+         <>
             <FormControlLabel
                control={
                   <Switch
@@ -24,7 +24,7 @@ class EditSwitch extends Component {
                }
                label='Edit'
             />
-         </div>
+         </>
       )
    }
 }

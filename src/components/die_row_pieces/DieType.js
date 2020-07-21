@@ -12,11 +12,10 @@ class DieType extends Component {
    }
 
    render() {
-      const { dieType, label, disabled } = this.props
+      const { dieType, label } = this.props
 
       return (
          <TextField
-            disabled={disabled}
             select
             value={dieType}
             label={label}

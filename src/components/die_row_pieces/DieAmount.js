@@ -10,11 +10,10 @@ class DieAmount extends Component {
    }
 
    render() {
-      const { dieAmount, label, disabled } = this.props
+      const { dieAmount, label } = this.props
 
       return (
          <TextField
-            disabled={disabled}
             value={dieAmount}
             type='number'
             label={label}
@@ -26,6 +25,7 @@ class DieAmount extends Component {
                   min: 1,
                },
             }}
+            inputProps={{ style: { textAlign: 'center' } }}
             style={{ width: '70px', margin: '4px 0' }}
          />
       )
