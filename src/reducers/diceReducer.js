@@ -10,31 +10,6 @@ import {
 const initialState = {
    0: {
       dieAmount: 1,
-      dieType: 4,
-      modAmount: 0,
-   },
-   1: {
-      dieAmount: 1,
-      dieType: 6,
-      modAmount: 0,
-   },
-   2: {
-      dieAmount: 1,
-      dieType: 8,
-      modAmount: 0,
-   },
-   3: {
-      dieAmount: 1,
-      dieType: 10,
-      modAmount: 0,
-   },
-   4: {
-      dieAmount: 1,
-      dieType: 12,
-      modAmount: 0,
-   },
-   5: {
-      dieAmount: 1,
       dieType: 20,
       modAmount: 0,
    },
@@ -46,7 +21,7 @@ const resetDie = {
    modAmount: 0,
 }
 
-let id = 5
+let id = Object.keys(initialState).length - 1
 const nextId = () => {
    id++
    return id
