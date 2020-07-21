@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import DieRow from './DieRow'
 import Dice from './Dice'
 import AddRow from './AddRow'
 import ClearResults from './ClearResults'
@@ -11,15 +10,6 @@ class DiceContainer extends Component {
    render() {
       return (
          <>
-            {/* <div>
-               {Object.entries(this.props.dice).map(([id, die]) => (
-                  <DieRow die={die} key={id} id={id} />
-               ))}
-               <AddRow />
-               <div className='clear-results-m'>
-                  <ClearResults />
-               </div>
-            </div> */}
             <div>
                <div className='dice'>
                   <div className='dice-comp dice-label'>
@@ -39,6 +29,9 @@ class DiceContainer extends Component {
                   <Dice die={die} key={id} id={id} />
                ))}
                <AddRow />
+               <div className='clear-results-m'>
+                  <ClearResults />
+               </div>
             </div>
          </>
       )
