@@ -12,16 +12,18 @@ class App extends Component {
    render() {
       return (
          <>
-            <Router basename={'/'}>
-               <CssBaseLine />
-               <NavBar />
-               <Container maxWidth='lg'>
-                  <Switch>
+            {/* <Router basename={'/'}> */}
+            <CssBaseLine />
+            {/* <NavBar /> */}
+            <Container maxWidth='lg'>
+               {/* <Switch>
                      <Route path='/' exact component={DiceRoller} />
                      <Route path='/ability-score-roller' component={AbilityScoreRoller} />
-                  </Switch>
-               </Container>
-            </Router>
+                  </Switch> */}
+               <h1>DnD Dice Roller</h1>
+               <DiceRoller />
+            </Container>
+            {/* </Router> */}
          </>
       )
    }

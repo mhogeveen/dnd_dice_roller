@@ -17,3 +17,8 @@ Hopefully it will be useful to someone!
 -  Redux
 -  Material UI
 -  SASS
+
+### Mockups
+
+A mockup for UX improvements to the dice row:
+![Dice Row Mockup](./assets/Dice_Row_Mockup.png)
