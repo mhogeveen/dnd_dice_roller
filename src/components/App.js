@@ -12,7 +12,7 @@ class App extends Component {
    render() {
       return (
          <>
-            <Router basename={'/'}>
+            <Router basename={'/dnd_dice_roller'}>
                <CssBaseLine />
                <NavBar />
                <Container maxWidth='lg'>
