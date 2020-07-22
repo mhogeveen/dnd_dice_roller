@@ -17,6 +17,7 @@ const ClearResults = (props) => {
          color='secondary'
          startIcon={<RotateRightIcon />}
          onClick={handleClearResults}
+         style={{ marginLeft: '10px' }}
       >
          Clear Results
       </Button>

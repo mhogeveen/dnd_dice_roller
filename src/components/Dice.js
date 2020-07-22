@@ -71,7 +71,7 @@ class Dice extends Component {
          )
       } else {
          return (
-            <div className='dice dice-clickable'>
+            <div className='dice dice-clickable' onClick={this.handleRoll}>
                <div className='dice-comp'>
                   <DieIcon dieType={dieType} />
                </div>
@@ -97,7 +97,7 @@ class Dice extends Component {
          return (
             <div className='result'>
                <div className='result-comp'>
-                  <span>Roll the dice to get results!</span>
+                  <span>Click the die row to get results!</span>
                </div>
             </div>
          )
@@ -140,7 +140,7 @@ class Dice extends Component {
       const result = this.props.result
 
       return (
-         <Paper elevation={1} style={{ marginBottom: '10px' }} onClick={this.handleOnClick}>
+         <Paper elevation={1} style={{ marginBottom: '10px' }}>
             {this.renderDice(dieAmount, dieType, modAmount, id)}
             <Divider />
             {this.renderResult(result)}

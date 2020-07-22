@@ -20,8 +20,6 @@ class App extends Component {
                      <Route path='/' exact component={DiceRoller} />
                      <Route path='/ability-score-roller' component={AbilityScoreRoller} />
                   </Switch>
-                  {/* <h1>DnD Dice Roller</h1>
-                  <DiceRoller /> */}
                </Container>
             </Router>
          </>
