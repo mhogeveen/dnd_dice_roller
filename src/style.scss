@@ -78,3 +78,29 @@
    grid-column: 6;
    justify-content: flex-end;
 }
+
+.result {
+   height: 50px;
+   display: grid;
+   gap: 10px;
+   grid-template-columns: auto repeat(6, max-content);
+   padding: 0 13px;
+   background: #fafafa;
+
+   &-comp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &-comp:first-child {
+      justify-content: flex-start;
+      overflow: hidden;
+
+      & span {
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+      }
+   }
+}
