@@ -53,8 +53,8 @@
       justify-content: flex-end;
    }
 
-   &-comp:nth-child(6) button:first-child {
-      margin-right: 10px;
+   &-comp:nth-child(6) button:last-child {
+      margin: 0 10px;
    }
 
    &-clickable {
