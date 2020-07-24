@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { removeRow } from '../../actions'
 
+import ToolTip from '@material-ui/core/ToolTip'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteIcon from '@material-ui/icons/DeleteOutlined'
 
@@ -12,9 +13,11 @@ class RemoveRow extends Component {
 
    render() {
       return (
-         <IconButton aria-label='delete' onClick={this.handleRemoveRow}>
-            <DeleteIcon />
-         </IconButton>
+         <ToolTip title='Delete'>
+            <IconButton aria-label='delete' onClick={this.handleRemoveRow}>
+               <DeleteIcon />
+            </IconButton>
+         </ToolTip>
       )
    }
 }

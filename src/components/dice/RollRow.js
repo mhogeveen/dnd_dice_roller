@@ -26,7 +26,7 @@ class RollRow extends Component {
                </div>
                <div className='dice-comp'>
                   <Delete id={id} />
-                  <Edit editing={true} id={id} />
+                  <Edit edit={this.props.edit} id={id} />
                </div>
             </div>
          )
@@ -46,7 +46,7 @@ class RollRow extends Component {
                   <span className='dice-comp-info'>{modAmount}</span>
                </div>
                <div className='dice-comp'>
-                  <Edit editing={false} id={id} />
+                  <Edit edit={this.props.edit} id={id} />
                </div>
             </div>
          )
@@ -59,8 +59,8 @@ class RollRow extends Component {
    }
 }
 
-const mapStateToProps = (state) => {
-   return { edit: state.edit }
+const mapStateToProps = (state, ownProps) => {
+   return { edit: state.dice[ownProps.id].edit }
 }
 
 export default connect(mapStateToProps)(RollRow)
