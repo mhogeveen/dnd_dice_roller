@@ -12,7 +12,7 @@ class RemoveRow extends Component {
 
    render() {
       return (
-         <IconButton aria-label='delete' color='secondary' onClick={this.handleRemoveRow}>
+         <IconButton aria-label='delete' onClick={this.handleRemoveRow}>
             <DeleteIcon />
          </IconButton>
       )

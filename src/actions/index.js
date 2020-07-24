@@ -70,9 +70,10 @@ export const clearResults = () => {
    }
 }
 
-export const toggleEdit = () => {
+export const toggleEdit = (id) => {
    return {
       type: TOGGLE_EDIT,
+      id,
    }
 }
 

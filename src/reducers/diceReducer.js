@@ -5,17 +5,20 @@ import {
    RESET_ROW,
    REMOVE_ROW,
    ADD_ROW,
+   TOGGLE_EDIT,
 } from '../actions/types'
 
 const initialState = {
    0: {
+      edit: false,
       dieAmount: 1,
       dieType: 20,
       modAmount: 0,
    },
 }
 
-const resetDie = {
+const initialDie = {
+   edit: false,
    dieAmount: 1,
    dieType: 20,
    modAmount: 0,
@@ -36,12 +39,14 @@ export default (state = initialState, action) => {
       case UPDATE_MOD_AMOUNT:
          return { ...state, [action.id]: { ...state[action.id], modAmount: action.payload } }
       case RESET_ROW:
-         return { ...state, [action.id]: { ...resetDie } }
+         return { ...state, [action.id]: { ...initialDie } }
       case REMOVE_ROW:
          const { [action.id]: _, ...newState } = state
          return newState
       case ADD_ROW:
-         return { ...state, [nextId()]: { ...resetDie } }
+         return { ...state, [nextId()]: { ...initialDie } }
+      case TOGGLE_EDIT:
+         return { ...state, [action.id]: { ...state[action.id], edit: !state[action.id].edit } }
       default:
          return state
    }

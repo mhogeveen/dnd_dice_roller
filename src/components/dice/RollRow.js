@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import DieIcon from './DieIcon'
 import DieAmount from './DieAmount'
 import DieType from './DieType'
 import ModAmount from './ModAmount'
-import Reset from './Reset'
-import RemoveRow from './RemoveRow'
+import Delete from './Delete'
+import Edit from './Edit'
 
 class RollRow extends Component {
    renderRollRow = (dieAmount, dieType, modAmount, id) => {
       if (this.props.edit) {
          return (
             <div className='dice'>
-               <div className='dice-comp'>
-                  <DieIcon dieType={dieType} />
-               </div>
                <div className='dice-comp'>
                   <DieAmount dieAmount={dieAmount} id={id} />
                </div>
@@ -29,17 +25,14 @@ class RollRow extends Component {
                   <ModAmount modAmount={modAmount} id={id} />
                </div>
                <div className='dice-comp'>
-                  <Reset id={id} />
-                  <RemoveRow id={id} />
+                  <Delete id={id} />
+                  <Edit editing={true} id={id} />
                </div>
             </div>
          )
       } else {
          return (
             <div className='dice dice-clickable' onClick={this.props.handleRoll}>
-               <div className='dice-comp'>
-                  <DieIcon dieType={dieType} />
-               </div>
                <div className='dice-comp'>
                   <span className='dice-comp-info'>{dieAmount}</span>
                </div>
@@ -51,6 +44,9 @@ class RollRow extends Component {
                </div>
                <div className='dice-comp'>
                   <span className='dice-comp-info'>{modAmount}</span>
+               </div>
+               <div className='dice-comp'>
+                  <Edit editing={false} id={id} />
                </div>
             </div>
          )

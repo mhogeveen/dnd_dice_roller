@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { clearResults } from '../actions'
 
 import Button from '@material-ui/core/Button'
-import RotateRightIcon from '@material-ui/icons/RotateRight'
 
 const ClearResults = (props) => {
    const handleClearResults = () => {
@@ -15,7 +14,6 @@ const ClearResults = (props) => {
          variant='outlined'
          disableElevation
          color='secondary'
-         startIcon={<RotateRightIcon />}
          onClick={handleClearResults}
          style={{ marginLeft: '10px' }}
       >

@@ -24,9 +24,10 @@
 
 .dice {
    height: 50px;
+   padding: 0 10px;
    display: grid;
    gap: 10px;
-   grid-template-columns: 50px 50px 10px 70px 50px auto;
+   grid-template-columns: 50px 10px 70px 50px auto;
 
    &-comp {
       display: flex;
@@ -49,12 +50,12 @@
       }
    }
 
-   &-comp:nth-child(6) {
+   &-comp:nth-child(5) {
       justify-content: flex-end;
    }
 
-   &-comp:nth-child(6) button:last-child {
-      margin: 0 10px;
+   &-comp:nth-child(5) button:last-child {
+      margin: 0 0 0 10px;
    }
 
    &-clickable {

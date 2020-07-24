@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { addRow } from '../actions'
 
 import Button from '@material-ui/core/Button'
-import AddIcon from '@material-ui/icons/Add'
 
 class AddRow extends Component {
    handleAddRow = () => {
@@ -12,13 +11,7 @@ class AddRow extends Component {
 
    render() {
       return (
-         <Button
-            variant='outlined'
-            color='primary'
-            disableElevation
-            startIcon={<AddIcon />}
-            onClick={this.handleAddRow}
-         >
+         <Button variant='outlined' color='primary' disableElevation onClick={this.handleAddRow}>
             Add Row
          </Button>
       )
