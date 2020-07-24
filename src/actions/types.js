@@ -9,5 +9,4 @@ export const TOGGLE_EDIT = 'TOGGLE_EDIT'
 export const ADD_RESULT = 'ADD_RESULT'
 export const CLEAR_RESULTS = 'CLEAR_RESULTS'
 
-export const OPEN_DRAWER = 'OPEN_DRAWER'
-export const CLOSE_DRAWER = 'CLOSE_DRAWER'
+export const TOGGLE_DRAWER = 'TOGGLE_DRAWER'

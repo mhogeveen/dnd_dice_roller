@@ -7,8 +7,7 @@ import {
    ADD_ROW,
    ADD_RESULT,
    CLEAR_RESULTS,
-   OPEN_DRAWER,
-   CLOSE_DRAWER,
+   TOGGLE_DRAWER,
    TOGGLE_EDIT,
 } from './types'
 
@@ -77,14 +76,8 @@ export const toggleEdit = (id) => {
    }
 }
 
-export const openDrawer = () => {
+export const toggleDrawer = () => {
    return {
-      type: OPEN_DRAWER,
-   }
-}
-
-export const closeDrawer = () => {
-   return {
-      type: CLOSE_DRAWER,
+      type: TOGGLE_DRAWER,
    }
 }

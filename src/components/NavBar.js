@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { openDrawer, closeDrawer } from '../actions'
+import { toggleDrawer } from '../actions'
 import { Link } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/styles'
@@ -37,18 +37,14 @@ const styles = {
 }
 
 class NavBar extends Component {
-   toggleDrawer = (toggle) => {
-      if (toggle === 'open') {
-         this.props.openDrawer()
-      } else {
-         this.props.closeDrawer()
-      }
+   handleToggle = () => {
+      this.props.toggleDrawer()
    }
 
    renderNavItems = (links) => {
       return links.map((link) => (
          <Link to={link.to} className='nav-link' key={link.title}>
-            <ListItem button onClick={() => this.toggleDrawer('close')}>
+            <ListItem button onClick={this.toggleDrawer}>
                <ListItemIcon>
                   <ArrowRightIcon />
                </ListItemIcon>
@@ -67,11 +63,7 @@ class NavBar extends Component {
                <Container maxWidth='lg' disableGutters={true}>
                   <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
                      <h2>DnD Dice Roller</h2>
-                     <IconButton
-                        color='inherit'
-                        aria-label='menu-open'
-                        onClick={() => this.toggleDrawer('open')}
-                     >
+                     <IconButton color='inherit' aria-label='menu-open' onClick={this.handleToggle}>
                         <MenuIcon />
                      </IconButton>
                   </Toolbar>
@@ -81,11 +73,11 @@ class NavBar extends Component {
                variant='temporary'
                anchor='right'
                open={this.props.drawer}
-               ModalProps={{ onBackdropClick: this.toggleDrawer }}
+               ModalProps={{ onBackdropClick: this.handleToggle }}
             >
                <div className='nav-drawer'>
                   <IconButton
-                     onClick={() => this.toggleDrawer('close')}
+                     onClick={this.handleToggle}
                      aria-label='menu-close'
                      style={{ margin: '5px' }}
                   >
@@ -111,4 +103,4 @@ const mapStateToProps = (state) => {
    return { drawer: state.drawer }
 }
 
-export default connect(mapStateToProps, { openDrawer, closeDrawer })(withStyles(styles)(NavBar))
+export default connect(mapStateToProps, { toggleDrawer })(withStyles(styles)(NavBar))
