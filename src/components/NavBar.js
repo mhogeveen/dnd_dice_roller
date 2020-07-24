@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { openDrawer, closeDrawer } from '../actions'
 import { Link } from 'react-router-dom'
 
+import { withStyles } from '@material-ui/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
@@ -29,6 +30,12 @@ const links = [
    },
 ]
 
+const styles = {
+   root: {
+      backgroundColor: '#1A535C',
+   },
+}
+
 class NavBar extends Component {
    toggleDrawer = (toggle) => {
       if (toggle === 'open') {
@@ -52,9 +59,11 @@ class NavBar extends Component {
    }
 
    render() {
+      const { classes } = this.props
+
       return (
          <>
-            <AppBar position='static' style={{ margin: '0 0 10px 0' }}>
+            <AppBar className={classes.root} position='static' style={{ margin: '0 0 24px 0' }}>
                <Container maxWidth='lg' disableGutters={true}>
                   <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
                      <h2>DnD Dice Roller</h2>
@@ -76,7 +85,6 @@ class NavBar extends Component {
             >
                <div className='nav-drawer'>
                   <IconButton
-                     color='primary'
                      onClick={() => this.toggleDrawer('close')}
                      aria-label='menu-close'
                      style={{ margin: '5px' }}
@@ -103,4 +111,4 @@ const mapStateToProps = (state) => {
    return { drawer: state.drawer }
 }
 
-export default connect(mapStateToProps, { openDrawer, closeDrawer })(NavBar)
+export default connect(mapStateToProps, { openDrawer, closeDrawer })(withStyles(styles)(NavBar))
