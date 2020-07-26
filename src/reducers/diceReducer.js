@@ -2,6 +2,7 @@ import {
    UPDATE_DIE_AMOUNT,
    UPDATE_DIE_TYPE,
    UPDATE_MOD_AMOUNT,
+   UPDATE_NAME,
    RESET_ROW,
    REMOVE_ROW,
    ADD_ROW,
@@ -10,6 +11,7 @@ import {
 
 const initialState = {
    0: {
+      name: '',
       edit: false,
       dieAmount: 1,
       dieType: 20,
@@ -18,6 +20,7 @@ const initialState = {
 }
 
 const initialDie = {
+   name: '',
    edit: false,
    dieAmount: 1,
    dieType: 20,
@@ -38,6 +41,8 @@ export default (state = initialState, action) => {
          return { ...state, [action.id]: { ...state[action.id], dieType: action.payload } }
       case UPDATE_MOD_AMOUNT:
          return { ...state, [action.id]: { ...state[action.id], modAmount: action.payload } }
+      case UPDATE_NAME:
+         return { ...state, [action.id]: { ...state[action.id], name: action.payload } }
       case RESET_ROW:
          return { ...state, [action.id]: { ...initialDie } }
       case REMOVE_ROW:

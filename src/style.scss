@@ -54,10 +54,6 @@
       justify-content: flex-end;
    }
 
-   // &-comp:nth-child(5) button:last-child {
-   //    margin: 0 0 0 10px;
-   // }
-
    &-clickable {
       cursor: pointer;
    }
@@ -81,11 +77,11 @@
 }
 
 .result {
-   height: 50px;
+   min-height: 50px;
    display: grid;
    gap: 10px;
    grid-template-columns: auto repeat(6, max-content);
-   padding: 0 13px;
+   padding: 10px 30px;
    background: #fafafa;
 
    &-comp {
@@ -96,12 +92,14 @@
 
    &-comp:first-child {
       justify-content: flex-start;
-      overflow: hidden;
-
-      & span {
-         overflow: hidden;
-         white-space: nowrap;
-         text-overflow: ellipsis;
-      }
    }
+}
+
+.name {
+   display: flex;
+   align-items: center;
+   font-size: 1rem;
+   height: 40px;
+   margin: 0 0 5px 10px;
+   padding: 0 14px;
 }

@@ -5,6 +5,7 @@ import { addResult } from '../actions'
 import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 
+import Name from './dice/Name'
 import RollRow from './dice/RollRow'
 import ResultRow from './dice/ResultRow'
 
@@ -38,21 +39,24 @@ class Dice extends Component {
    }
 
    render() {
-      const { dieAmount, dieType, modAmount } = this.props.die
+      const { dieAmount, dieType, modAmount, name } = this.props.die
       const id = this.props.id
 
       return (
-         <Paper elevation={1} style={{ marginBottom: '10px' }}>
-            <RollRow
-               dieAmount={dieAmount}
-               dieType={dieType}
-               modAmount={modAmount}
-               id={id}
-               handleRoll={this.handleRoll}
-            />
-            <Divider />
-            <ResultRow id={id} />
-         </Paper>
+         <>
+            <Name name={name} id={id} />
+            <Paper elevation={1} style={{ marginBottom: '10px' }}>
+               <RollRow
+                  dieAmount={dieAmount}
+                  dieType={dieType}
+                  modAmount={modAmount}
+                  id={id}
+                  handleRoll={this.handleRoll}
+               />
+               <Divider />
+               <ResultRow id={id} />
+            </Paper>
+         </>
       )
    }
 }

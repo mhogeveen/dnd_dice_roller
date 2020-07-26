@@ -15,7 +15,7 @@ class ResultRow extends Component {
          return (
             <div className='result'>
                <div className='result-comp'>
-                  <span>{result.rolls.join('+')}</span>
+                  <span>{result.rolls.join(' + ')}</span>
                </div>
                <div className='result-comp'>
                   <span>=</span>
