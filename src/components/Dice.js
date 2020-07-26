@@ -45,7 +45,8 @@ class Dice extends Component {
       return (
          <>
             <Name name={name} id={id} />
-            <Paper elevation={1} style={{ marginBottom: '10px' }}>
+            <Paper elevation={1} style={{ marginBottom: '10px', position: 'relative' }}>
+               <div className='color-box' style={{ background: '#4edcd4' }}></div>
                <RollRow
                   dieAmount={dieAmount}
                   dieType={dieType}
