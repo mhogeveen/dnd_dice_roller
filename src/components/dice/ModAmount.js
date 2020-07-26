@@ -2,7 +2,17 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateModAmount } from '../../actions'
 
+import { withStyles } from '@material-ui/styles'
 import TextField from '@material-ui/core/TextField'
+
+const styles = {
+   root: {
+      '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+         borderColor: '#4ecdc4',
+         borderWidth: '1px',
+      },
+   },
+}
 
 class ModAmount extends Component {
    handleModAmount = (e) => {
@@ -10,10 +20,11 @@ class ModAmount extends Component {
    }
 
    render() {
-      const { modAmount, label } = this.props
+      const { modAmount, label, classes } = this.props
 
       return (
          <TextField
+            className={classes.root}
             value={modAmount}
             type='number'
             label={label}
@@ -26,4 +37,4 @@ class ModAmount extends Component {
    }
 }
 
-export default connect(null, { updateModAmount })(ModAmount)
+export default connect(null, { updateModAmount })(withStyles(styles)(ModAmount))

@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
-import TextField from '@material-ui/core/TextField'
-import MenuItem from '@material-ui/core/MenuItem'
 import { connect } from 'react-redux'
 import { updateDieType } from '../../actions'
+
+import { withStyles } from '@material-ui/styles'
+import TextField from '@material-ui/core/TextField'
+import MenuItem from '@material-ui/core/MenuItem'
+
+const styles = {
+   root: {
+      '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+         borderColor: '#4ecdc4',
+         borderWidth: '1px',
+      },
+   },
+}
 
 const diceTypes = [4, 6, 8, 10, 12, 20]
 
@@ -12,10 +23,11 @@ class DieType extends Component {
    }
 
    render() {
-      const { dieType, label } = this.props
+      const { dieType, label, classes } = this.props
 
       return (
          <TextField
+            className={classes.root}
             select
             value={dieType}
             label={label}
@@ -34,4 +46,4 @@ class DieType extends Component {
    }
 }
 
-export default connect(null, { updateDieType })(DieType)
+export default connect(null, { updateDieType })(withStyles(styles)(DieType))
