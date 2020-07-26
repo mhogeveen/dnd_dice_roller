@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dnd_dice_roller/static/css/main.c0e13262.chunk.css",
+    "main.css": "/dnd_dice_roller/static/css/main.70206c04.chunk.css",
     "main.js": "/dnd_dice_roller/static/js/main.73940d3b.chunk.js",
     "main.js.map": "/dnd_dice_roller/static/js/main.73940d3b.chunk.js.map",
     "runtime-main.js": "/dnd_dice_roller/static/js/runtime-main.1d9c4e2c.js",
@@ -8,15 +8,15 @@
     "static/js/2.11cce00b.chunk.js": "/dnd_dice_roller/static/js/2.11cce00b.chunk.js",
     "static/js/2.11cce00b.chunk.js.map": "/dnd_dice_roller/static/js/2.11cce00b.chunk.js.map",
     "index.html": "/dnd_dice_roller/index.html",
-    "precache-manifest.c1597c8175bbc43739c497bc2a9c8074.js": "/dnd_dice_roller/precache-manifest.c1597c8175bbc43739c497bc2a9c8074.js",
+    "precache-manifest.395aa97f2cf59dcd0485ed51f0212303.js": "/dnd_dice_roller/precache-manifest.395aa97f2cf59dcd0485ed51f0212303.js",
     "service-worker.js": "/dnd_dice_roller/service-worker.js",
-    "static/css/main.c0e13262.chunk.css.map": "/dnd_dice_roller/static/css/main.c0e13262.chunk.css.map",
+    "static/css/main.70206c04.chunk.css.map": "/dnd_dice_roller/static/css/main.70206c04.chunk.css.map",
     "static/js/2.11cce00b.chunk.js.LICENSE.txt": "/dnd_dice_roller/static/js/2.11cce00b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1d9c4e2c.js",
     "static/js/2.11cce00b.chunk.js",
-    "static/css/main.c0e13262.chunk.css",
+    "static/css/main.70206c04.chunk.css",
     "static/js/main.73940d3b.chunk.js"
   ]
 }
