@@ -3,7 +3,6 @@ import {
    UPDATE_DIE_TYPE,
    UPDATE_MOD_AMOUNT,
    UPDATE_NAME,
-   // RESET_ROW,
    REMOVE_ROW,
    ADD_ROW,
    ADD_RESULT,
@@ -43,13 +42,6 @@ export const updateName = (value, id) => {
       payload: value,
    }
 }
-
-// export const resetRow = (id) => {
-//    return {
-//       type: RESET_ROW,
-//       id,
-//    }
-// }
 
 export const removeRow = (id) => {
    return {

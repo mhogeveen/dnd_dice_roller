@@ -3,7 +3,6 @@ import {
    UPDATE_DIE_TYPE,
    UPDATE_MOD_AMOUNT,
    UPDATE_NAME,
-   RESET_ROW,
    REMOVE_ROW,
    ADD_ROW,
    TOGGLE_EDIT,
@@ -33,25 +32,58 @@ const nextId = () => {
    return id
 }
 
-export default (state = initialState, action) => {
+const savedState = JSON.parse(localStorage.getItem('state'))
+
+const stateOnLoad = () => {
+   if (savedState === null) {
+      return initialState
+   } else {
+      return savedState
+   }
+}
+
+export default (state = stateOnLoad(), action) => {
    switch (action.type) {
       case UPDATE_DIE_AMOUNT:
-         return { ...state, [action.id]: { ...state[action.id], dieAmount: action.payload } }
+         const stateDieAmount = {
+            ...state,
+            [action.id]: { ...state[action.id], dieAmount: action.payload },
+         }
+         localStorage.setItem('state', JSON.stringify(stateDieAmount))
+         return stateDieAmount
       case UPDATE_DIE_TYPE:
-         return { ...state, [action.id]: { ...state[action.id], dieType: action.payload } }
+         const stateDieType = {
+            ...state,
+            [action.id]: { ...state[action.id], dieType: action.payload },
+         }
+         localStorage.setItem('state', JSON.stringify(stateDieType))
+         return stateDieType
       case UPDATE_MOD_AMOUNT:
-         return { ...state, [action.id]: { ...state[action.id], modAmount: action.payload } }
+         const stateModAmount = {
+            ...state,
+            [action.id]: { ...state[action.id], modAmount: action.payload },
+         }
+         localStorage.setItem('state', JSON.stringify(stateModAmount))
+         return stateModAmount
       case UPDATE_NAME:
-         return { ...state, [action.id]: { ...state[action.id], name: action.payload } }
-      case RESET_ROW:
-         return { ...state, [action.id]: { ...initialDie } }
+         const stateName = { ...state, [action.id]: { ...state[action.id], name: action.payload } }
+         localStorage.setItem('state', JSON.stringify(stateName))
+         return stateName
       case REMOVE_ROW:
-         const { [action.id]: _, ...newState } = state
-         return newState
+         const { [action.id]: _, ...stateRemoveRow } = state
+         localStorage.setItem('state', JSON.stringify(stateRemoveRow))
+         return stateRemoveRow
       case ADD_ROW:
-         return { ...state, [nextId()]: { ...initialDie } }
+         const stateAddRow = { ...state, [nextId()]: { ...initialDie } }
+         localStorage.setItem('state', JSON.stringify(stateAddRow))
+         return stateAddRow
       case TOGGLE_EDIT:
-         return { ...state, [action.id]: { ...state[action.id], edit: !state[action.id].edit } }
+         const stateToggleEdit = {
+            ...state,
+            [action.id]: { ...state[action.id], edit: !state[action.id].edit },
+         }
+         localStorage.setItem('state', JSON.stringify(stateToggleEdit))
+         return stateToggleEdit
       default:
          return state
    }
