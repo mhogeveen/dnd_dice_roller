@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { updateDieAmount } from '../../actions'
 
@@ -14,33 +14,29 @@ const styles = {
    },
 }
 
-class DieAmount extends Component {
-   handleDieAmount = (e) => {
-      this.props.updateDieAmount(e.target.value, this.props.id)
+const DieAmount = ({ id, classes, dieAmount, label, updateDieAmount }) => {
+   const handleDieAmount = (e) => {
+      updateDieAmount(e.target.value, id)
    }
 
-   render() {
-      const { dieAmount, label, classes } = this.props
-
-      return (
-         <TextField
-            className={classes.root}
-            value={dieAmount}
-            type='number'
-            label={label}
-            margin='dense'
-            variant='outlined'
-            onChange={this.handleDieAmount}
-            InputProps={{
-               inputProps: {
-                  min: 1,
-               },
-            }}
-            inputProps={{ style: { textAlign: 'center' } }}
-            style={{ width: '70px', margin: '4px 0' }}
-         />
-      )
-   }
+   return (
+      <TextField
+         className={classes.root}
+         value={dieAmount}
+         type='number'
+         label={label}
+         margin='dense'
+         variant='outlined'
+         onChange={(e) => handleDieAmount(e)}
+         InputProps={{
+            inputProps: {
+               min: 1,
+            },
+         }}
+         inputProps={{ style: { textAlign: 'center' } }}
+         style={{ width: '70px', margin: '4px 0' }}
+      />
+   )
 }
 
 export default connect(null, { updateDieAmount })(withStyles(styles)(DieAmount))
