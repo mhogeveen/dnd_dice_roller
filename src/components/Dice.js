@@ -41,8 +41,9 @@ const Dice = ({ die, id, addResult }) => {
                dieAmount={dieAmount}
                dieType={dieType}
                modAmount={modAmount}
+               name={name}
                id={id}
-               handleRoll={() => handleRoll()}
+               handleRoll={handleRoll}
             />
             <Divider />
             <ResultRow id={id} />
