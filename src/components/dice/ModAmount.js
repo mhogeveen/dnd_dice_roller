@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { updateModAmount } from '../../actions'
 
@@ -14,27 +14,23 @@ const styles = {
    },
 }
 
-class ModAmount extends Component {
-   handleModAmount = (e) => {
-      this.props.updateModAmount(e.target.value, this.props.id)
+const ModAmount = ({ id, updateModAmount, modAmount, label, classes }) => {
+   const handleModAmount = (e) => {
+      updateModAmount(e.target.value, id)
    }
 
-   render() {
-      const { modAmount, label, classes } = this.props
-
-      return (
-         <TextField
-            className={classes.root}
-            value={modAmount}
-            type='number'
-            label={label}
-            onChange={this.handleModAmount}
-            margin='dense'
-            variant='outlined'
-            style={{ width: '70px', margin: '4px 0' }}
-         />
-      )
-   }
+   return (
+      <TextField
+         className={classes.root}
+         value={modAmount}
+         type='number'
+         label={label}
+         onChange={(e) => handleModAmount(e)}
+         margin='dense'
+         variant='outlined'
+         style={{ width: '70px', margin: '4px 0' }}
+      />
+   )
 }
 
 export default connect(null, { updateModAmount })(withStyles(styles)(ModAmount))
