@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { addRow } from '../actions'
 
@@ -16,26 +16,21 @@ const styles = {
    },
 }
 
-class AddRow extends Component {
-   handleAddRow = () => {
-      this.props.addRow()
+const AddRow = ({ addRow, classes }) => {
+   const handleAddRow = () => {
+      addRow()
    }
 
-   render() {
-      const { classes } = this.props
-
-      return (
-         <Button
-            className={classes.root}
-            color='primary'
-            variant='outlined'
-            disableElevation
-            onClick={this.handleAddRow}
-         >
-            Add Row
-         </Button>
-      )
-   }
+   return (
+      <Button
+         className={classes.root}
+         color='primary'
+         variant='outlined'
+         disableElevation
+         onClick={() => handleAddRow()}>
+         Add Row
+      </Button>
+   )
 }
 
 export default connect(null, { addRow })(withStyles(styles)(AddRow))
