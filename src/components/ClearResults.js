@@ -16,12 +16,10 @@ const styles = {
    },
 }
 
-const ClearResults = (props) => {
+const ClearResults = ({ clearResults, classes }) => {
    const handleClearResults = () => {
-      props.clearResults()
+      clearResults()
    }
-
-   const { classes } = props
 
    return (
       <Button
@@ -29,8 +27,7 @@ const ClearResults = (props) => {
          variant='outlined'
          disableElevation
          onClick={handleClearResults}
-         style={{ marginLeft: '10px' }}
-      >
+         style={{ marginLeft: '10px' }}>
          Clear Results
       </Button>
    )
