@@ -7,7 +7,9 @@ import ModAmount from './ModAmount'
 import Delete from './Delete'
 import Edit from './Edit'
 
-const RollRow = ({ edit, dieAmount, dieType, modAmount, name, id, handleRoll }) => {
+const RollRow = ({ edit, die, id, handleRoll }) => {
+   const { dieAmount, dieType, modAmount, name } = die
+
    const renderRollRow = () => {
       if (edit) {
          return (
@@ -45,7 +47,7 @@ const RollRow = ({ edit, dieAmount, dieType, modAmount, name, id, handleRoll }) 
                <div className='dice-comp'>
                   <span className='dice-comp-info'>{modAmount}</span>
                </div>
-               <div className={name.length > 1 ? 'dice-comp dice-comp--up' : 'dice-comp'}>
+               <div className={name ? 'dice-comp dice-comp--up' : 'dice-comp'}>
                   <Edit edit={edit} id={id} />
                </div>
             </div>

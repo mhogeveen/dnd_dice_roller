@@ -17,16 +17,12 @@ const styles = {
 }
 
 const ClearResults = ({ clearResults, classes }) => {
-   const handleClearResults = () => {
-      clearResults()
-   }
-
    return (
       <Button
          className={classes.root}
          variant='outlined'
          disableElevation
-         onClick={handleClearResults}
+         onClick={() => clearResults()}
          style={{ marginLeft: '10px' }}>
          Clear Results
       </Button>

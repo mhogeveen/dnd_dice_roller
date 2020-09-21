@@ -22,26 +22,22 @@ const Name = ({ id, updateName, classes, edit, name }) => {
    const renderName = () => {
       if (edit) {
          return (
-            <div className='dice'>
-               <div className='name'>
-                  <TextField
-                     className={classes.root}
-                     value={name}
-                     size='small'
-                     variant='outlined'
-                     onChange={(e) => handleUpdateName(e)}
-                     style={{ width: '100%' }}
-                  />
-               </div>
+            <div className='name'>
+               <TextField
+                  className={classes.root}
+                  value={name}
+                  size='small'
+                  variant='outlined'
+                  onChange={(e) => handleUpdateName(e)}
+                  style={{ width: '100%' }}
+               />
             </div>
          )
       } else {
          if (name) {
             return (
-               <div className='dice'>
-                  <div className='name'>
-                     <span>{name}</span>
-                  </div>
+               <div className='name'>
+                  <span>{name}</span>
                </div>
             )
          }

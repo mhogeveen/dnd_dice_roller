@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 
 import Name from './dice/Name'
+import ColorPicker from './dice/ColorPicker'
 import RollRow from './dice/RollRow'
 import ResultRow from './dice/ResultRow'
 
@@ -34,17 +35,13 @@ const Dice = ({ die, id, addResult }) => {
 
    return (
       <>
-         <Name name={name} id={id} />
+         <div className='dice'>
+            <Name name={name} id={id} />
+            <ColorPicker id={id} />
+         </div>
          <Paper elevation={1} style={{ marginBottom: '10px', position: 'relative' }}>
             <div className='color-box' style={{ background: '#4edcd4' }}></div>
-            <RollRow
-               dieAmount={dieAmount}
-               dieType={dieType}
-               modAmount={modAmount}
-               name={name}
-               id={id}
-               handleRoll={handleRoll}
-            />
+            <RollRow die={die} id={id} handleRoll={handleRoll} />
             <Divider />
             <ResultRow id={id} />
          </Paper>

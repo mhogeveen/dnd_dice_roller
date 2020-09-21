@@ -17,17 +17,13 @@ const styles = {
 }
 
 const AddRow = ({ addRow, classes }) => {
-   const handleAddRow = () => {
-      addRow()
-   }
-
    return (
       <Button
          className={classes.root}
          color='primary'
          variant='outlined'
          disableElevation
-         onClick={() => handleAddRow()}>
+         onClick={() => addRow()}>
          Add Row
       </Button>
    )
