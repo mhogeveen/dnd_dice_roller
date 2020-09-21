@@ -98,18 +98,14 @@
 
 .color-picker {
    width: 30px;
+   position: relative;
 
    &__inner {
       position: relative;
       height: 30px;
       margin: 10px 0;
       border-radius: 50%;
-      border: 1px solid rgba(0, 0, 0, 0.23);
       cursor: pointer;
-
-      &:hover {
-         border: 1px solid rgba(0, 0, 0, 0.87);
-      }
    }
 }
 
@@ -121,7 +117,8 @@
       rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
    padding: 10px 0 0 10px;
    border-radius: 4px;
-   left: 50px;
+   left: 35px;
+   top: 35px;
 }
 
 .color-box {

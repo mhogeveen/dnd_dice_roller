@@ -9,7 +9,7 @@ import DeleteIcon from '@material-ui/icons/DeleteOutlined'
 
 const styles = {
    root: {
-      color: '#FF6B6B',
+      color: '#F94144',
    },
 }
 

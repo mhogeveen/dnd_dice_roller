@@ -7,11 +7,11 @@ import Button from '@material-ui/core/Button'
 
 const styles = {
    root: {
-      color: '#FF6B6B',
-      border: '1px solid rgba(255,107,107,0.5)',
+      color: '#F94144',
+      border: '1px solid rgba(249, 65, 68,0.5)',
       '&:hover': {
-         border: '1px solid #FF6B6B',
-         backgroundColor: 'rgba(255,107,107,0.04)',
+         border: '1px solid #F94144',
+         backgroundColor: 'rgba(249, 65, 68,0.04)',
       },
    },
 }

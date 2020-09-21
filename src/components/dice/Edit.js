@@ -10,7 +10,7 @@ import SaveIcon from '@material-ui/icons/Save'
 
 const styles = {
    root: {
-      color: '#4ECDC4',
+      color: '#43AA8B',
    },
 }
 
