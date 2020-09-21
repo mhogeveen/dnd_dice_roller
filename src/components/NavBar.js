@@ -8,7 +8,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Container from '@material-ui/core/Container'
-import MenuIcon from '@material-ui/icons/Menu'
+// import MenuIcon from '@material-ui/icons/Menu'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import Drawer from '@material-ui/core/Drawer'
 import Divider from '@material-ui/core/Divider'
@@ -63,9 +63,9 @@ class NavBar extends Component {
                <Container maxWidth='lg' disableGutters={true}>
                   <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
                      <h2>DnD Dice Roller</h2>
-                     <IconButton color='inherit' aria-label='menu-open' onClick={this.handleToggle}>
+                     {/* <IconButton color='inherit' aria-label='menu-open' onClick={this.handleToggle}>
                         <MenuIcon />
-                     </IconButton>
+                     </IconButton> */}
                   </Toolbar>
                </Container>
             </AppBar>
@@ -73,14 +73,12 @@ class NavBar extends Component {
                variant='temporary'
                anchor='right'
                open={this.props.drawer}
-               ModalProps={{ onBackdropClick: this.handleToggle }}
-            >
+               ModalProps={{ onBackdropClick: this.handleToggle }}>
                <div className='nav-drawer'>
                   <IconButton
                      onClick={this.handleToggle}
                      aria-label='menu-close'
-                     style={{ margin: '5px' }}
-                  >
+                     style={{ margin: '5px' }}>
                      <ChevronRightIcon />
                   </IconButton>
                   <Divider />
@@ -88,8 +86,7 @@ class NavBar extends Component {
                      component='nav'
                      subheader={
                         <ListSubheader component='div'>What roll will you make?</ListSubheader>
-                     }
-                  >
+                     }>
                      {this.renderNavItems(links)}
                   </List>
                </div>
