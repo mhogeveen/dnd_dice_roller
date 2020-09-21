@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class ResultRow extends Component {
-   renderResultRow = (result) => {
+const ResultRow = ({ result }) => {
+   const renderResultRow = (result) => {
       if (result === undefined) {
          return (
             <div className='result'>
@@ -38,9 +38,7 @@ class ResultRow extends Component {
       }
    }
 
-   render() {
-      return <>{this.renderResultRow(this.props.result)}</>
-   }
+   return <>{renderResultRow(result)}</>
 }
 
 const mapStateToProps = (state, ownProps) => {
