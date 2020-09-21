@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { toggleEdit } from '../../actions'
 
@@ -14,22 +14,19 @@ const styles = {
    },
 }
 
-class Edit extends Component {
-   handleEdit = (e) => {
-      this.props.toggleEdit(this.props.id)
+const Edit = ({ id, toggleEdit, classes, edit }) => {
+   const handleEdit = (e) => {
+      toggleEdit(id)
       e.stopPropagation()
    }
 
-   render() {
-      const { classes } = this.props
-      return (
-         <ToolTip title={this.props.edit ? 'Save' : 'Edit'}>
-            <IconButton className={classes.root} aria-label='edit' onClick={this.handleEdit}>
-               {this.props.edit ? <SaveIcon /> : <EditIcon />}
-            </IconButton>
-         </ToolTip>
-      )
-   }
+   return (
+      <ToolTip title={edit ? 'Save' : 'Edit'}>
+         <IconButton className={classes.root} aria-label='edit' onClick={(e) => handleEdit(e)}>
+            {edit ? <SaveIcon /> : <EditIcon />}
+         </IconButton>
+      </ToolTip>
+   )
 }
 
 export default connect(null, { toggleEdit })(withStyles(styles)(Edit))
