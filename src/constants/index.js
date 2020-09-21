@@ -17,3 +17,14 @@ export const initialDie = {
    dieType: 20,
    modAmount: 0,
 }
+
+export const navLinks = [
+   {
+      to: '/',
+      title: 'Dice Roller',
+   },
+   {
+      to: '/ability-score-roller',
+      title: 'Ability Score Roller',
+   },
+]

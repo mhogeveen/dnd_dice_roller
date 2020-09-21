@@ -14,7 +14,7 @@ const styles = {
 }
 
 const RemoveRow = ({ removeRow, id, classes }) => {
-   const handleRemoveRow = (e) => {
+   const handleRemoveRow = () => {
       removeRow(id)
    }
 

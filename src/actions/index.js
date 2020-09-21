@@ -7,7 +7,6 @@ import {
    ADD_ROW,
    ADD_RESULT,
    CLEAR_RESULTS,
-   TOGGLE_DRAWER,
    TOGGLE_EDIT,
 } from './types'
 
@@ -74,11 +73,5 @@ export const toggleEdit = (id) => {
    return {
       type: TOGGLE_EDIT,
       id,
-   }
-}
-
-export const toggleDrawer = () => {
-   return {
-      type: TOGGLE_DRAWER,
    }
 }

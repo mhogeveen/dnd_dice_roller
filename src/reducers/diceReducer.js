@@ -10,12 +10,6 @@ import {
 } from '../actions/types'
 import { initialState, initialDie } from '../constants'
 
-// let id = Object.keys(initialState).length - 1
-// const nextId = () => {
-//    id++
-//    return id
-// }
-
 const savedState = JSON.parse(localStorage.getItem('dnd_dice_roller'))
 
 const stateOnLoad = () => {
