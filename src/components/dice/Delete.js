@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { removeRow } from '../../actions'
 
@@ -13,21 +13,18 @@ const styles = {
    },
 }
 
-class RemoveRow extends Component {
-   handleRemoveRow = (e) => {
-      this.props.removeRow(this.props.id)
+const RemoveRow = ({ removeRow, id, classes }) => {
+   const handleRemoveRow = (e) => {
+      removeRow(id)
    }
 
-   render() {
-      const { classes } = this.props
-      return (
-         <ToolTip title='Delete'>
-            <IconButton className={classes.root} aria-label='delete' onClick={this.handleRemoveRow}>
-               <DeleteIcon />
-            </IconButton>
-         </ToolTip>
-      )
-   }
+   return (
+      <ToolTip title='Delete'>
+         <IconButton className={classes.root} aria-label='delete' onClick={handleRemoveRow}>
+            <DeleteIcon />
+         </IconButton>
+      </ToolTip>
+   )
 }
 
 export default connect(null, { removeRow })(withStyles(styles)(RemoveRow))
