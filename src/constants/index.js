@@ -7,6 +7,7 @@ export const initialState = {
       dieAmount: 1,
       dieType: 20,
       modAmount: 0,
+      color: '#4edcd4',
    },
 }
 
@@ -16,6 +17,7 @@ export const initialDie = {
    dieAmount: 1,
    dieType: 20,
    modAmount: 0,
+   color: '#4edcd4',
 }
 
 export const navLinks = [

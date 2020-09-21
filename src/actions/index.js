@@ -3,6 +3,7 @@ import {
    UPDATE_DIE_TYPE,
    UPDATE_MOD_AMOUNT,
    UPDATE_NAME,
+   UPDATE_COLOR,
    REMOVE_ROW,
    ADD_ROW,
    ADD_RESULT,
@@ -37,6 +38,14 @@ export const updateModAmount = (value, id) => {
 export const updateName = (value, id) => {
    return {
       type: UPDATE_NAME,
+      id,
+      payload: value,
+   }
+}
+
+export const updateColor = (value, id) => {
+   return {
+      type: UPDATE_COLOR,
       id,
       payload: value,
    }

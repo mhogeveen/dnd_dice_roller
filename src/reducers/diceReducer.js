@@ -4,6 +4,7 @@ import {
    UPDATE_DIE_TYPE,
    UPDATE_MOD_AMOUNT,
    UPDATE_NAME,
+   UPDATE_COLOR,
    REMOVE_ROW,
    ADD_ROW,
    TOGGLE_EDIT,
@@ -47,6 +48,13 @@ export default (state = stateOnLoad(), action) => {
          const stateName = { ...state, [action.id]: { ...state[action.id], name: action.payload } }
          localStorage.setItem('dnd_dice_roller', JSON.stringify(stateName))
          return stateName
+      case UPDATE_COLOR:
+         const stateColor = {
+            ...state,
+            [action.id]: { ...state[action.id], color: action.payload },
+         }
+         localStorage.setItem('dnd_dice_roller', JSON.stringify(stateColor))
+         return stateColor
       case REMOVE_ROW:
          const { [action.id]: _, ...stateRemoveRow } = state
          localStorage.setItem('dnd_dice_roller', JSON.stringify(stateRemoveRow))

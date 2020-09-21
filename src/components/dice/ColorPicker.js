@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { updateColor } from '../../actions'
 
 import { CirclePicker } from 'react-color'
 
-const ColorPicker = ({ edit }) => {
+const ColorPicker = ({ edit, id, updateColor, color }) => {
    const [open, setOpen] = useState(false)
-   const [color, setColor] = useState('#4edcd4')
 
    const handleChange = (color, e) => {
       e.stopPropagation()
-      setColor(color.hex)
+      updateColor(color.hex, id)
       setTimeout(() => {
          setOpen(!open)
       }, 200)
@@ -27,7 +27,9 @@ const ColorPicker = ({ edit }) => {
                      color={color}
                      onChange={(color, e) => handleChange(color, e)}
                      style={{ position: 'absolute !important' }}
-                     width='266px'
+                     width={190}
+                     circleSize={20}
+                     circleSpacing={10}
                   />
                ) : null}
             </div>
@@ -39,7 +41,7 @@ const ColorPicker = ({ edit }) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-   return { edit: state.dice[ownProps.id].edit }
+   return { edit: state.dice[ownProps.id].edit, color: state.dice[ownProps.id].color }
 }
 
-export default connect(mapStateToProps)(ColorPicker)
+export default connect(mapStateToProps, { updateColor })(ColorPicker)
