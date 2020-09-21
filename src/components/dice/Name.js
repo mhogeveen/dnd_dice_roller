@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { updateName } from '../../actions'
 
@@ -14,35 +14,33 @@ const styles = {
    },
 }
 
-class Name extends Component {
-   handleUpdateName = (e) => {
-      this.props.updateName(e.target.value, this.props.id)
+const Name = ({ id, updateName, classes, edit, name }) => {
+   const handleUpdateName = (e) => {
+      updateName(e.target.value, id)
    }
 
-   renderName = () => {
-      const { classes } = this.props
-
-      if (this.props.edit) {
+   const renderName = () => {
+      if (edit) {
          return (
             <div className='dice'>
                <div className='name'>
                   <TextField
                      className={classes.root}
-                     value={this.props.name}
+                     value={name}
                      size='small'
                      variant='outlined'
-                     onChange={this.handleUpdateName}
+                     onChange={(e) => handleUpdateName(e)}
                      style={{ width: '100%' }}
                   />
                </div>
             </div>
          )
       } else {
-         if (this.props.name) {
+         if (name) {
             return (
                <div className='dice'>
                   <div className='name'>
-                     <span>{this.props.name}</span>
+                     <span>{name}</span>
                   </div>
                </div>
             )
@@ -50,9 +48,7 @@ class Name extends Component {
       }
    }
 
-   render() {
-      return <>{this.renderName()}</>
-   }
+   return <>{renderName()}</>
 }
 
 const mapStateToProps = (state, ownProps) => {
