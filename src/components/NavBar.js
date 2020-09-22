@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import Container from '@material-ui/core/Container'
-// import MenuIcon from '@material-ui/icons/Menu'
+import MenuIcon from '@material-ui/icons/Menu'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import Drawer from '@material-ui/core/Drawer'
 import Divider from '@material-ui/core/Divider'
@@ -56,9 +56,9 @@ const NavBar = ({ classes }) => {
                   <Typography variant='h6' color='textPrimary'>
                      DnD Dice Roller
                   </Typography>
-                  {/* <IconButton aria-label='menu-open' edge='end' onClick={() => setDrawer(!drawer)}>
+                  <IconButton aria-label='menu-open' edge='end' onClick={() => setDrawer(!drawer)}>
                      <MenuIcon />
-                  </IconButton> */}
+                  </IconButton>
                </Toolbar>
             </Container>
          </AppBar>
