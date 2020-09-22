@@ -130,3 +130,15 @@
    border-top-left-radius: 4px;
    border-bottom-left-radius: 4px;
 }
+
+.type-picker {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   &__buttons {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+   }
+}
