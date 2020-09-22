@@ -117,8 +117,8 @@
       rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
    padding: 10px 0 0 10px;
    border-radius: 4px;
-   left: 35px;
-   top: 35px;
+   left: calc(50% - 100px);
+   top: 40px;
 }
 
 .color-box {

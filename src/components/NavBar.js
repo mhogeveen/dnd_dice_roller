@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { navLinks } from '../constants'
+import { navLinks } from '../assets'
 
 import { withStyles } from '@material-ui/styles'
 import AppBar from '@material-ui/core/AppBar'
