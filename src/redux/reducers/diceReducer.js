@@ -9,7 +9,7 @@ import {
    ADD_ROW,
    TOGGLE_EDIT,
 } from '../actions/types'
-import { initialState, initialDie } from '../constants'
+import { initialState, initialDie } from '../../assets'
 
 const savedState = JSON.parse(localStorage.getItem('dnd_dice_roller'))
 
