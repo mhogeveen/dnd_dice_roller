@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateDieAmount } from '../../actions'
+import { updateModAmount } from '../../../redux/actions'
 
 import { withStyles } from '@material-ui/styles'
 import TextField from '@material-ui/core/TextField'
@@ -14,29 +14,23 @@ const styles = {
    },
 }
 
-const DieAmount = ({ id, classes, dieAmount, label, updateDieAmount }) => {
-   const handleDieAmount = (e) => {
-      updateDieAmount(e.target.value, id)
+const ModAmount = ({ id, updateModAmount, modAmount, label, classes }) => {
+   const handleModAmount = (e) => {
+      updateModAmount(e.target.value, id)
    }
 
    return (
       <TextField
          className={classes.root}
-         value={dieAmount}
+         value={modAmount}
          type='number'
          label={label}
+         onChange={(e) => handleModAmount(e)}
          margin='dense'
          variant='outlined'
-         onChange={(e) => handleDieAmount(e)}
-         InputProps={{
-            inputProps: {
-               min: 1,
-            },
-         }}
-         inputProps={{ style: { textAlign: 'center' } }}
          style={{ width: '70px', margin: '4px 0' }}
       />
    )
 }
 
-export default connect(null, { updateDieAmount })(withStyles(styles)(DieAmount))
+export default connect(null, { updateModAmount })(withStyles(styles)(ModAmount))

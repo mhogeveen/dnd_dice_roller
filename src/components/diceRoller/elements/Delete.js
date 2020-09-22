@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { removeRow } from '../../actions'
+import { removeRow } from '../../../redux/actions'
 
 import { withStyles } from '@material-ui/styles'
 import ToolTip from '@material-ui/core/ToolTip'

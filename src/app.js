@@ -4,11 +4,10 @@ import CssBaseLine from '@material-ui/core/CssBaseline'
 
 import Container from '@material-ui/core/Container'
 
-import NavBar from './NavBar'
-import DiceRoller from './DiceRoller'
-import AbilityScoreRoller from './AbilityScoreRoller'
+import NavBar from './components/NavBar'
+import { DiceRoller, AbilityScoreRoller } from './pages'
 
-const App = () => {
+const app = () => {
    return (
       <>
          <Router basename={'/dnd_dice_roller'}>
@@ -25,4 +24,4 @@ const App = () => {
    )
 }
 
-export default App
+export default app

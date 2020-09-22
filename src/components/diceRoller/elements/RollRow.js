@@ -1,11 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import DieAmount from './DieAmount'
-import DieType from './DieType'
-import ModAmount from './ModAmount'
-import Delete from './Delete'
-import Edit from './Edit'
+import { Edit, Delete, DieAmount, DieType, ModAmount } from './index'
 
 const RollRow = ({ edit, die, id, handleRoll }) => {
    const { dieAmount, dieType, modAmount, name } = die

@@ -1,13 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addResult } from '../actions'
+import { addResult } from '../../redux/actions'
 
 import Paper from '@material-ui/core/Paper'
 import Divider from '@material-ui/core/Divider'
 
-import RollRow from './dice/RollRow'
-import ResultRow from './dice/ResultRow'
-import CustomizerRow from './dice/CustomizerRow'
+import { CustomizerRow, ResultRow, RollRow } from './elements'
 
 const Dice = ({ die, id, addResult }) => {
    const { dieAmount, dieType, modAmount, name, color } = die

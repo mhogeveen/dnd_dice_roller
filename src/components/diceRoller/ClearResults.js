@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { clearResults } from '../actions'
+import { clearResults } from '../../redux/actions'
 
 import { withStyles } from '@material-ui/styles'
 import Button from '@material-ui/core/Button'

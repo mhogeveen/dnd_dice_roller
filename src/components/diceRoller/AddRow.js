@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addRow } from '../actions'
+import { addRow } from '../../redux/actions'
 
 import { withStyles } from '@material-ui/styles'
 import Button from '@material-ui/core/Button'

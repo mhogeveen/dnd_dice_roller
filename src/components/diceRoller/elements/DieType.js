@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateDieType } from '../../actions'
+import { updateDieType } from '../../../redux/actions'
+import { diceTypes } from '../../../assets'
 
 import { withStyles } from '@material-ui/styles'
 import TextField from '@material-ui/core/TextField'
@@ -14,8 +15,6 @@ const styles = {
       },
    },
 }
-
-const diceTypes = [4, 6, 8, 10, 12, 20]
 
 const DieType = ({ id, updateDieType, dieType, label, classes }) => {
    const handleDieType = (e) => {

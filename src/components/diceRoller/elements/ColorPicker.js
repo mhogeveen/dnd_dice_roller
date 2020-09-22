@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { updateColor } from '../../actions'
+import { updateColor } from '../../../redux/actions'
 
 import { CirclePicker } from 'react-color'
 import { withStyles } from '@material-ui/styles'

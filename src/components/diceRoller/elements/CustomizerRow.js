@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Name from './Name'
-import ColorPicker from './ColorPicker'
+import { Name, ColorPicker } from './index'
 
 const CustomizerRow = ({ name, id, edit }) => {
    return (

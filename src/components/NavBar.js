@@ -31,7 +31,7 @@ const NavBar = ({ classes }) => {
 
    const renderNavItems = () => {
       return navLinks.map((link) => (
-         <Link to={link.to} className='nav-link' key={link.title}>
+         <Link to={link.to} className='nav-link' key={link.id}>
             <ListItem button onClick={() => setDrawer(!drawer)}>
                <ListItemIcon>
                   <ArrowRightIcon />

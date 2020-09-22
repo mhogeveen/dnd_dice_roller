@@ -13,8 +13,7 @@ Hopefully it will be useful to someone!
 ## Would like to add
 
 -  Help page to explain how the app works (cleans up unnecessary explanation in 'functional' parts of the app)
--  Color picker for customization of a dice row
--  Name input for customization of a dice row
+-  A tool that helps you rolls for Ability Scores
 
 ## Stack
 

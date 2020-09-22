@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateName } from '../../actions'
+import { updateName } from '../../../redux/actions'
 
 import { withStyles } from '@material-ui/styles'
 import TextField from '@material-ui/core/TextField'

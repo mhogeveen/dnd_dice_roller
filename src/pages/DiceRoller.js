@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Dice from './Dice'
-import AddRow from './AddRow'
-import ClearResults from './ClearResults'
+import { AddRow, ClearResults, Dice } from '../components/diceRoller'
 
 const DiceRoller = ({ dice }) => {
    return (
