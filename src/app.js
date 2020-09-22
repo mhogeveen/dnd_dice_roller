@@ -1,16 +1,16 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import CssBaseLine from '@material-ui/core/CssBaseline'
 
 import Container from '@material-ui/core/Container'
 
 import NavBar from './components/NavBar'
-import { DiceRoller, AbilityScoreRoller } from './pages'
+import { DiceRoller } from './pages'
 
 const app = () => {
    return (
       <>
-         <Router basename={'/dnd_dice_roller'}>
+         {/* <Router basename={'/dnd_dice_roller'}>
             <CssBaseLine />
             <NavBar />
             <Container maxWidth='lg'>
@@ -19,7 +19,12 @@ const app = () => {
                   <Route path='/ability-score-roller' component={AbilityScoreRoller} />
                </Switch>
             </Container>
-         </Router>
+         </Router> */}
+         <CssBaseLine />
+         <NavBar />
+         <Container>
+            <DiceRoller />
+         </Container>
       </>
    )
 }

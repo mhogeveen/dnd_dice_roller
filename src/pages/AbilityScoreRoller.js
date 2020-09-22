@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 import Paper from '@material-ui/core/Paper'
-// import TextField from '@material-ui/core/TextField'
-// import Button from '@material-ui/core/Button'
-// import ButtonGroup from '@material-ui/core/ButtonGroup'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 class AbilityScoreRoller extends Component {
    render() {
@@ -12,11 +12,11 @@ class AbilityScoreRoller extends Component {
             elevation={1}
             style={{
                display: 'flex',
-               flexDirection: 'column',
+               flexDirection: 'row',
                alignItems: 'center',
                padding: '10px',
             }}>
-            {/* <TextField
+            <TextField
                variant='outlined'
                value='4'
                disabled
@@ -30,9 +30,7 @@ class AbilityScoreRoller extends Component {
                <Button>8</Button>
                <Button>10</Button>
                <Button>12</Button>
-            </ButtonGroup> */}
-            <h2>Ability Score Roller</h2>
-            <span>Under construction</span>
+            </ButtonGroup>
          </Paper>
       )
    }
