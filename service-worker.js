@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dnd_dice_roller/precache-manifest.9954d97318e0aca9d22ceaccf0f9e339.js"
+  "/dnd_dice_roller/precache-manifest.af8856c185a2df69f1b16bddcec98d07.js"
 );
 
 self.addEventListener('message', (event) => {
