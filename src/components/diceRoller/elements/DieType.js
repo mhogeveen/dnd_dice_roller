@@ -31,9 +31,9 @@ const DieType = ({ id, updateDieType, dieType, label, classes }) => {
          margin='dense'
          variant='outlined'
          style={{ width: '80px', margin: '4px 0' }}>
-         {diceTypes.map((type) => (
-            <MenuItem key={type} value={type}>
-               {type}
+         {diceTypes.map((item) => (
+            <MenuItem key={item.type} value={item.type}>
+               {item.type}
             </MenuItem>
          ))}
       </TextField>
