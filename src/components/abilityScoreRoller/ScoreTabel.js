@@ -1,24 +1,12 @@
 import React from 'react'
 
+import { ScoreRow } from './index'
+
 import Paper from '@material-ui/core/Paper'
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup'
-import ToggleButton from '@material-ui/lab/ToggleButton'
 
 const ScoreTabel = ({ rolls }) => {
    const renderButtonGroup = (rolls) => {
-      return Object.entries(rolls).map(([id, roll]) => (
-         <ToggleButtonGroup key={id} value={[]}>
-            {renderButtons(roll)}
-         </ToggleButtonGroup>
-      ))
-   }
-
-   const renderButtons = (roll) => {
-      return Object.entries(roll).map(([id, item]) => (
-         <ToggleButton key={id} value={item}>
-            {item}
-         </ToggleButton>
-      ))
+      return Object.entries(rolls).map(([id, roll]) => <ScoreRow roll={roll} key={id} />)
    }
 
    return (

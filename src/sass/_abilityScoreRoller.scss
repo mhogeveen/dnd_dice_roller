@@ -9,3 +9,25 @@
       flex-wrap: wrap;
    }
 }
+
+.score-row {
+   display: flex;
+   gap: 0.25em;
+   margin: 0.25em 0 0 0.25em;
+
+   &:last-of-type {
+      margin-bottom: 0.25em;
+   }
+
+   &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 30px;
+
+      &.item--disabeled {
+         opacity: 0.5;
+      }
+   }
+}
