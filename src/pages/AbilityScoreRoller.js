@@ -1,11 +1,45 @@
 import React, { useState } from 'react'
 
-import { TypePicker } from '../components/abilityScoreRoller'
+import { withStyles } from '@material-ui/core'
+import Button from '@material-ui/core/Button'
 
-const AbilityScoreRoller = () => {
-   const [pickedType, setPickedType] = useState(null)
+import { ScoreTabel } from '../components/abilityScoreRoller'
 
-   return <TypePicker pickedType={pickedType} setPickedType={setPickedType} />
+const styles = {
+   root: {
+      color: '#43AA8B',
+      border: '1px solid rgba(67, 170, 139,0.5)',
+      '&:hover': {
+         border: '1px solid #43AA8B',
+         backgroundColor: 'rgba(67, 170, 139,0.04)',
+      },
+   },
 }
 
-export default AbilityScoreRoller
+const AbilityScoreRoller = ({ classes }) => {
+   const [rolls, setRolls] = useState([])
+
+   const handleRoll = () => {
+      let results = [[], [], [], [], [], []]
+
+      for (let i = 0; i < 4; i++) {
+         for (let j = 0; j <= 5; j++) {
+            const roll = Math.ceil(Math.random() * 6)
+            results[j] = [...results[j], roll]
+         }
+      }
+
+      setRolls(results)
+   }
+
+   return (
+      <>
+         <Button variant='outlined' className={classes.root} onClick={() => handleRoll()}>
+            Roll for Ability Scores
+         </Button>
+         <ScoreTabel rolls={rolls} />
+      </>
+   )
+}
+
+export default withStyles(styles)(AbilityScoreRoller)

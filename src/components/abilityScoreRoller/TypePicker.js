@@ -11,14 +11,14 @@ const styles = {
    },
 }
 
-const TypePicker = ({ classes, pickedType, setPickedType }) => {
+const TypePicker = ({ classes, pickedType, handlePickType }) => {
    const renderPicked = () => {
       return diceTypes
          .filter((item) => item.type >= 6 && item.type <= 12)
          .map((item) => (
             <IconButton
                key={item.type}
-               onClick={() => setPickedType(item.type)}
+               onClick={() => handlePickType(item.type)}
                className={pickedType === item.type ? classes.root : null}>
                <SvgIcon viewBox='0 0 24 24' style={{ width: '20px', height: '20px' }}>
                   <path d={item.icon} />
