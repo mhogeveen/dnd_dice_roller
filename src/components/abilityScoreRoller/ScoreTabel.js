@@ -5,13 +5,16 @@ import { ScoreRow } from './index'
 import Paper from '@material-ui/core/Paper'
 
 const ScoreTabel = ({ rolls }) => {
-   const renderButtonGroup = (rolls) => {
-      return Object.entries(rolls).map(([id, roll]) => <ScoreRow roll={roll} key={id} />)
+   const renderButtonGroup = () => {
+      return Object.entries(rolls).map(([id, roll]) => {
+         const least = Math.min(...roll)
+         const others = [...roll]
+         others.sort().splice(0, 1)
+         return <ScoreRow least={least} others={others} key={id} />
+      })
    }
 
-   return (
-      <Paper style={{ display: 'flex', flexDirection: 'column' }}>{renderButtonGroup(rolls)}</Paper>
-   )
+   return <Paper className='score-tabel'>{renderButtonGroup()}</Paper>
 }
 
 export default ScoreTabel

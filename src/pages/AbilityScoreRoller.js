@@ -33,12 +33,12 @@ const AbilityScoreRoller = ({ classes }) => {
    }
 
    return (
-      <>
+      <div className='ability-score-roller'>
          <Button variant='outlined' className={classes.root} onClick={() => handleRoll()}>
             Roll for Ability Scores
          </Button>
          <ScoreTabel rolls={rolls} />
-      </>
+      </div>
    )
 }
 
